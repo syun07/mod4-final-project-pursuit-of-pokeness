@@ -1,0 +1,22 @@
+.UserConsole {
+    height: 100%;
+    margin: 2px;
+    padding: 2px;
+  }
+  
+  #magic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .labels {
+    padding: 5px;
+  }
+  
+  pre {
+    height: 120px;
+    overflow-y: scroll;
+    white-space: pre-wrap;
+  }
+  

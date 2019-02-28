@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Segment } from 'semantic-ui-react';
 import './App.css';
+import WildPokemonMap from './containers/WildPokemonMap'
+import UserConsole from './containers/UserConsole'
 
-// const API = `https://pokeapi.co/api/v2/pokemon/`
+
+const API = 'http://localhost:3000/pokemons'
 
 class App extends Component {
 
@@ -10,28 +13,38 @@ class App extends Component {
     super(props);
     
     this.state = {
-      pokemon: []
+      kanto: [],
+      johto: [],
+      sinnoh: [],
+      hoenn: []
     }
+  }
+
+  componentDidMount() {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => {
+        let k = data.filter(poke => poke.region === 'kanto')
+        let j = data.filter(poke => poke.region === 'johto')
+        let s = data.filter(poke => poke.region === 'sinnoh')
+        let h = data.filter(poke => poke.region === 'hoenn')
+
+        this.setState({
+          kanto: k,
+          johto: j,
+          sinnoh: s,
+          hoenn: h
+          // },() => console.log(this.state)
+        })
+    })
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Segment id="app">
+        <WildPokemonMap />
+        <UserConsole />
+      </Segment>
     );
   }
 }
