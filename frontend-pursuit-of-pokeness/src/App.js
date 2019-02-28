@@ -2,7 +2,18 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// const API = `https://pokeapi.co/api/v2/pokemon/`
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      pokemon: []
+    }
+  }
+
   render() {
     return (
       <div className="App">
