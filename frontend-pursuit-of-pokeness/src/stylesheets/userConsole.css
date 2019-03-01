@@ -1,7 +1,14 @@
 .UserConsole {
-    height: 100%;
+    min-height: 500px;
     margin: 2px;
     padding: 2px;
+  }
+
+  .myPokemon {
+    height: 400px;
+    overflow-y: scroll;
+    white-space: pre-wrap;
+
   }
   
   #magic {
@@ -12,6 +19,8 @@
 
   .labels {
     padding: 5px;
+    justify-content:center;
+    text-align: center;
   }
   
   pre {

@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
+
 import { Segment } from 'semantic-ui-react';
 
 
 class WildPokemonMap extends Component {
     constructor() {
         super()
-
-        // this.state = {
-
-        // }
     }
 
     render() {
