@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-// import Profile from './Profile'
-// import PokeStats from './PokeStats'
+import Profile from './Profile'
+import PokeStats from './PokeStats'
 import Fight from './Fight'
-// import CatchSuccess from './CatchSuccess'
-// import CatchFail from './CatchFail'
+import CatchSuccess from './CatchSuccess'
+import CatchFail from './CatchFail'
 
 import { Segment } from 'semantic-ui-react'
 
@@ -20,9 +20,14 @@ class MagicContainer extends Component {
 	}
     
 	render() {
+		const profile = <Profile />
 		// const pokeStats = <PokeStats selectedPoke={this.state.selectedPoke} />
 
-		const fight = <Fight selectedPoke={this.state.selectedPoke} wildPoke={this.state.wildPoke} />
+		// const fight = <Fight selectedPoke={this.state.selectedPoke} wildPoke={this.state.wildPoke} />
+
+		const success = <CatchSuccess wildPoke={this.state.wildPoke} />
+
+		// const fail = <CatchFail wildPoke={this.state.wildPoke} />
 
 		return (
 			<Segment.Group className="UserConsole">
@@ -32,7 +37,9 @@ class MagicContainer extends Component {
 				
 				<Segment id="magic">
 					{/* {pokeStats} */}
-					{fight}
+					{/* {fight} */}
+					{success}
+					{/* {fail} */}
 				</Segment>
 			</Segment.Group>
 

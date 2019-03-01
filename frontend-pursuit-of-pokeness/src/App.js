@@ -6,7 +6,7 @@ import { Segment } from 'semantic-ui-react';
 import './App.css';
 
 
-const API = 'http://localhost:3000/pokemons'
+const PokeApi = 'http://localhost:3000/pokemons'
 
 class App extends Component {
 	constructor(props) {
@@ -39,7 +39,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch(API)
+		fetch(PokeApi)
 		.then(res => res.json())
 		.then(data => {
 			let k = data.filter(poke => poke.region === 'kanto')
@@ -52,11 +52,7 @@ class App extends Component {
 				johto: j,
 				sinnoh: s,
 				hoenn: h
-			// },() => console.log(this.state.kanto[0]))
 			})
-			// this.setState({
-			// 	selectedPoke: this.state.kanto[0]
-			// })
 		})
 	}
 

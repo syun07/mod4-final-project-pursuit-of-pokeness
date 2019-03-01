@@ -34,3 +34,32 @@
     height: 450px;
     width: 450px;
   }
+
+   #successcard {
+    background-image: url('../images/heart.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 450px;
+    width: 450px;
+  }
+
+  #caughtpoke {
+    width: 250px;
+	  height: 250px;
+  }
+
+  #failcard {
+    background-image: url('../images/cloud.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 450px;
+    width: 450px;
+  }
