@@ -1,0 +1,21 @@
+.pokeCard {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-content: center;
+	height: 400px;
+	width: 400px;
+}
+
+.pokeCardImg {
+	height: 250px;
+	width: 250px;
+} 
+
+.pokeCardContent {
+	padding-bottom: 2em;
+}
+
+ui.button {
+	margin-bottom: 3em;
+}

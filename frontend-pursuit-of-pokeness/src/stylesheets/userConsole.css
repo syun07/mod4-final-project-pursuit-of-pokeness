@@ -2,17 +2,18 @@
     min-height: 500px;
     margin: 2px;
     padding: 2px;
+    align-items: center;
   }
 
   .myPokemon {
-    height: 400px;
+    height: 500px;
     overflow-y: scroll;
     white-space: pre-wrap;
-
   }
   
   #magic {
     display: flex;
+    height: 500px;
     justify-content: center;
     align-items: center;
   }
@@ -22,10 +23,14 @@
     justify-content:center;
     text-align: center;
   }
-  
-  pre {
-    height: 120px;
-    overflow-y: scroll;
-    white-space: pre-wrap;
+
+  #fightcard {
+    background-image: url('../images/sparkles.gif');
+    background-size: 100%;
+    position: relative;
   }
-  
+
+  #fightgrid {
+    height: 450px;
+    width: 450px;
+  }

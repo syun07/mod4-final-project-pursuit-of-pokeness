@@ -4,9 +4,6 @@ import { Segment } from 'semantic-ui-react';
 
 
 class WildPokemonMap extends Component {
-    constructor() {
-        super()
-    }
 
     render() {
         return (

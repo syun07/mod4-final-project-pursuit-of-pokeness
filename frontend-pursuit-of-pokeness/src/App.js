@@ -16,7 +16,25 @@ class App extends Component {
 			kanto: [],
 			johto: [],
 			sinnoh: [],
-			hoenn: []
+			hoenn: [],
+			selectedPoke: {
+				id: 1,
+				name: "bulbasaur",
+				hp: 45,
+				region: "kanto",
+				front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+				back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+				kind: "poison"
+			},
+			wildPoke: {
+				id: 4,
+				name: "charmander",
+				hp: 39,
+				region: "kanto",
+				front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+				back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
+				kind: "fire"
+			}
 		}
 	}
 
@@ -34,8 +52,11 @@ class App extends Component {
 				johto: j,
 				sinnoh: s,
 				hoenn: h
-			// },() => console.log(this.state))
+			// },() => console.log(this.state.kanto[0]))
 			})
+			// this.setState({
+			// 	selectedPoke: this.state.kanto[0]
+			// })
 		})
 	}
 
@@ -44,7 +65,10 @@ class App extends Component {
 			<Segment id="app">
 				<WildPokemonMap />
 				<UserConsole 
-					kanto={this.state.kanto} />
+					kanto={this.state.kanto} 
+					selectedPoke={this.state.selectedPoke}
+					wildPoke={this.state.wildPoke}
+					/>
 			</Segment>
 		);
 	}
