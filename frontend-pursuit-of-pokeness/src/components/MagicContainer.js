@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Profile from './Profile'
+// import Profile from './Profile'
 import PokeStats from './PokeStats'
 import Fight from './Fight'
 import CatchSuccess from './CatchSuccess'
@@ -20,7 +20,7 @@ class MagicContainer extends Component {
 	}
     
 	render() {
-		const profile = <Profile />
+		// const profile = <Profile />
 		// const pokeStats = <PokeStats selectedPoke={this.state.selectedPoke} />
 
 		// const fight = <Fight selectedPoke={this.state.selectedPoke} wildPoke={this.state.wildPoke} />
