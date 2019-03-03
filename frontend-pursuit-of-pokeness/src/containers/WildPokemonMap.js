@@ -1,28 +1,27 @@
 import React, { Component } from 'react'
 import Region from '../components/Region'
+import '../stylesheets/WildPokeMap.css';
 
-import { Segment } from 'semantic-ui-react';
+import { Segment , Button } from 'semantic-ui-react';
 
 
 
 const WildPokemonMap = (props) => {
 
     return (
-        <div>
-            <Segment id='map'>
-                <Region kantoRand={props.kantoRand} />
-                <Region johtoRand={props.johtoRand} />
-                <Region hoennRand={props.hoennRand} />
-                <Region sinnohRand={props.sinnohRand} />
-            </Segment>       
 
-            <Segment>
-                <button
+            <Segment id='map'>
+                <Region rand={props.kantoRand} name='kanto'/>
+                <Region rand={props.johtoRand} name='johto'/>
+                <Region rand={props.hoennRand} name='hoenn'/>
+                <Region rand={props.sinnohRand} name='sinnoh'/>
+
+                <Button id='refreshBtn' attached='bottom'
                     onClick={props.renderRandomPoke}>
                     Refresh
-                </button>
-            </Segment>
-        </div>
+                </Button>
+
+            </Segment>       
 
     )
 }

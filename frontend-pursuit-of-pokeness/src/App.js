@@ -111,8 +111,8 @@ class App extends Component {
 			johtoRand: [...this.state.johtoRand, ...newJohto],
 			hoennRand: [...this.state.hoennRand, ...newHoenn],
 			sinnohRand: [...this.state.sinnohRand, ...newSinnoh],
-			// },() => console.log(this.state))
-		})
+			},() => console.log(this.state))
+		// })
     }
 
 	render() {

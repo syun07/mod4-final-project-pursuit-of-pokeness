@@ -1,0 +1,41 @@
+.region{
+   border: 2px solid red;
+   position: absolute;
+ }
+
+ #kanto {
+   top: 536px;
+   left: 463px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ }  
+
+
+ #johto {
+   top: 222px;
+   left: 607px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ } 
+
+ #hoenn {
+   top: 595px;
+   left: 1000px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ }
+ 
+ #sinnoh {
+   top: 595px;
+   left: 10px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ } 
+
+ #refreshBtn {
+  top: 916px;
+ }
