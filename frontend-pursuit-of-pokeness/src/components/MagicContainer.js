@@ -23,9 +23,9 @@ class MagicContainer extends Component {
 		// const profile = <Profile />
 		// const pokeStats = <PokeStats selectedPoke={this.state.selectedPoke} />
 
-		// const fight = <Fight selectedPoke={this.state.selectedPoke} wildPoke={this.state.wildPoke} />
+		const fight = <Fight selectedPoke={this.state.selectedPoke} wildPoke={this.state.wildPoke} />
 
-		const success = <CatchSuccess wildPoke={this.state.wildPoke} />
+		// const success = <CatchSuccess wildPoke={this.state.wildPoke} />
 
 		// const fail = <CatchFail wildPoke={this.state.wildPoke} />
 
@@ -37,8 +37,8 @@ class MagicContainer extends Component {
 				
 				<Segment id="magic">
 					{/* {pokeStats} */}
-					{/* {fight} */}
-					{success}
+					{fight}
+					{/* {success} */}
 					{/* {fail} */}
 				</Segment>
 			</Segment.Group>

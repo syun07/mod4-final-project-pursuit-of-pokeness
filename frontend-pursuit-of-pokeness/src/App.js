@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import WildPokemonMap from './containers/WildPokemonMap'
 import UserConsole from './containers/UserConsole'
+import OpeningPage from './containers/OpeningPage'
+
 
 import { Segment } from 'semantic-ui-react';
 import './App.css';
@@ -38,7 +40,8 @@ class App extends Component {
 			kantoRand: [],
 			johtoRand: [],
 			hoennRand: [],
-			sinnohRand: []
+			sinnohRand: [],
+			enterPage: false
 		}
 	}
 
@@ -113,24 +116,45 @@ class App extends Component {
 			sinnohRand: [...this.state.sinnohRand, ...newSinnoh],
 			// },() => console.log(this.state))
 		})
-    }
+	}
+	
+	submitHandler = event => {
+		this.setState({
+			enterPage: true
+		})
+
+		this.renderRandomPoke()
+	}
 
 	render() {
+		// console.log(this.state)
 		return (
-			<Segment id="app">
-				<WildPokemonMap 
-					kantoRand={this.state.kantoRand}
-					johtoRand={this.state.johtoRand}
-					hoennRand={this.state.hoennRand}
-					sinnohRand={this.state.sinnohRand}
-					renderRandomPoke={this.renderRandomPoke}
-				/>
-				<UserConsole 
-					kanto={this.state.kanto} 
-					selectedPoke={this.state.selectedPoke}
-					wildPoke={this.state.wildPoke}
-					/>
-			</Segment>
+			// if user logs in (clicks submit), render map & user console- otherwise render opening page
+			this.state.enterPage ?
+				
+				<Segment id="app">
+					<WildPokemonMap
+						kantoRand={this.state.kantoRand}
+						johtoRand={this.state.johtoRand}
+						hoennRand={this.state.hoennRand}
+						sinnohRand={this.state.sinnohRand}
+						renderRandomPoke={this.renderRandomPoke} />
+					<UserConsole
+						kanto={this.state.kanto}
+						johto={this.state.johto}
+						hoenn={this.state.hoenn}
+						sinnoh={this.state.sinnoh}
+						selectedPoke={this.state.selectedPoke}
+						wildPoke={this.state.wildPoke} /> 
+				</Segment>
+
+				:
+
+				<Segment id='app'>
+					<OpeningPage
+						submitHandler={this.submitHandler} />
+				</Segment>
+			
 		);
 	}
 }

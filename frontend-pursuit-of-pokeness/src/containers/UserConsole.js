@@ -8,20 +8,23 @@ import '../stylesheets/userConsole.css'
 
 const UserConsole = (props) => {
     return (
-    <Grid columns='equal'>
-        <Grid.Column>
-            <MyPokemon 
-                kanto={props.kanto} />
-        </Grid.Column>
+        <Grid columns='equal'>
+            <Grid.Column>
+                <MyPokemon 
+                    kanto={props.kanto}
+                    johto={props.johto}
+                    hoenn={props.hoenn}
+                    sinnoh={props.sinnoh} />
+            </Grid.Column>
 
-        <Grid.Column>
-            <MagicContainer 
-                kanto={props.kanto}
-                selectedPoke={props.selectedPoke} 
-                wildPoke={props.wildPoke}
-                />
-        </Grid.Column>
-    </Grid>    
+            <Grid.Column>
+                <MagicContainer 
+                    kanto={props.kanto}
+                    selectedPoke={props.selectedPoke} 
+                    wildPoke={props.wildPoke}
+                    />
+            </Grid.Column>
+        </Grid>    
     )
 }
 
