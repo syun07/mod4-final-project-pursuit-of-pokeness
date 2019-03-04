@@ -5,13 +5,14 @@ div.ui.card.icon {
 	}
 	
   
-  /* div.ui.raised.card.selected {
+  div.ui.card.main {
 	border: 2px solid red;
-	borderRadius: 5px;
-  } */
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+  }
   
   div.ui.card.icon:hover {
 	border: 2px solid blue;
-	border-radius: 5px;
 }
   

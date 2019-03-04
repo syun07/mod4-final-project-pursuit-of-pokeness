@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PokeIcon from './PokeIcon'
 
 import { Segment } from 'semantic-ui-react'
-import { Card, Button } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 
 const MyPokemon = (props) => {
@@ -11,6 +11,8 @@ const MyPokemon = (props) => {
 		<PokeIcon
 			key={poke.id}
 			poke={poke}
+			selectMyPoke={props.selectMyPoke}
+			mainPoke={props.mainPoke}
 		/>
 	)
 
@@ -23,16 +25,11 @@ const MyPokemon = (props) => {
 			</Segment>
 
 			<Segment compact id='myPokemon'>
-				<Button
-					inverted color='blue' >
-					Kanto
-				</Button>
-				
-				<br /><br />
 				
 				<Card.Group itemsPerRow={6}>
 					{mapMyPoke}
 				</Card.Group>
+				
 			</Segment>
 
 		</Segment.Group>

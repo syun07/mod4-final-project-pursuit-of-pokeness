@@ -7,7 +7,7 @@ import '../stylesheets/PokeStats.css'
 class PokeStats extends React.Component {
 	render() {
 	  
-		const {name, hp, front, back, region, kind } = this.props.selectedPoke
+		const {name, hp, front, region, kind } = this.props.selectedPoke
 		return (
 			<Card className='pokeCard'>
 				<div>
@@ -37,22 +37,21 @@ class PokeStats extends React.Component {
 						</div>
 						
 						<br />
-
-						<Button compact
-							color='green'>
-							Button
-						</Button>
+						{this.props.wild ?
+							<Button compact
+								color='green'
+								onClick={this.props.catchPoke}>
+								Catch
+							</Button> 
+							:
+							<Button compact
+								color='green'
+								onClick={() => this.props.makeMain(this.props.selectedPoke)}>
+								Choose Me!
+							</Button> 
+						}
 						
 					</div>
-
-					
-
-					
-
-
-
-
-
 				</div>
 			</Card>
 		)

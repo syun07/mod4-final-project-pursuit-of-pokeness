@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Grid, Segment, Card } from 'semantic-ui-react'
+import { Grid, Card } from 'semantic-ui-react'
 import '../stylesheets/userConsole.css'
 
 
@@ -20,7 +20,7 @@ class Fight extends Component {
 							</Grid.Column>
 							
 							<Grid.Column>
-								<img src={this.props.wildPoke.front} alt=''/>
+								<img src={this.props.selectedPoke.front} alt=''/>
 							</Grid.Column>
 	
 						</Grid.Row>
@@ -28,7 +28,7 @@ class Fight extends Component {
 						<Grid.Row stretched>
 							
 							<Grid.Column>
-								<img src={this.props.selectedPoke.back} alt=''/>
+								<img src={this.props.mainPoke.back} alt=''/>
 							</Grid.Column>
 							
 							<Grid.Column>

@@ -8,16 +8,29 @@ const PokeIcon = (props) => {
     const { name, front } = props.poke
 
     return (
-        <Card
-            className='icon' >
-            <div>
-                <img
-                    alt={name}
-                    src={front} /> 
-                <h4>{name}</h4>
-            </div>
+        props.mainPoke === props.poke ?
             
-        </Card>
+            <Card className='main'>
+                <div>
+                    <img
+                        alt={name}
+                        src={front}
+                        onClick={() => props.selectMyPoke(props.poke)}
+                        /> 
+                </div>
+            </Card> 
+
+            :
+                
+            <Card className='icon' >
+                <div>
+                    <img
+                        alt={name}
+                        src={front}
+                        onClick={() => props.selectMyPoke(props.poke)}
+                        /> 
+                </div>
+            </Card>
     )
 }
 

@@ -11,14 +11,20 @@ const UserConsole = (props) => {
         <Grid id='userConsole' columns='equal'>
             <Grid.Column>
                 <MyPokemon 
-                    myPokemonList={props.myPokemonList}/>
+                    myPokemonList={props.myPokemonList}
+                    selectMyPoke={props.selectMyPoke} 
+                    mainPoke={props.mainPoke}
+                    />
             </Grid.Column>
 
             <Grid.Column>
                 <MagicContainer 
-                    kanto={props.kanto}
                     selectedPoke={props.selectedPoke} 
-                    wildPoke={props.wildPoke}
+                    mainPoke={props.mainPoke}
+                    wild={props.wild} 
+                    renderMe={props.renderMe}
+                    makeMain={props.makeMain}
+                    catchPoke={props.catchPoke}
                     />
             </Grid.Column>
         </Grid>    

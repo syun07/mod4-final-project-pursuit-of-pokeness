@@ -19,30 +19,16 @@ class App extends Component {
 			johto: [],
 			hoenn: [],
 			sinnoh: [],
-			selectedPoke: {
-				id: 1,
-				name: "bulbasaur",
-				hp: 45,
-				region: "kanto",
-				front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-				back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
-				kind: "poison"
-			},
-			wildPoke: {
-				id: 4,
-				name: "charmander",
-				hp: 39,
-				region: "kanto",
-				front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-				back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
-				kind: "fire"
-			},
 			kantoRand: [],
 			johtoRand: [],
 			hoennRand: [],
 			sinnohRand: [],
+			myPokemonList: [],
+			selectedPoke: null,
+			mainPoke: null,
+			wild: null,
 			enterPage: false,
-			myPokemonList: []
+			renderMe: 'profile'
 		}
 	}
 
@@ -69,7 +55,8 @@ class App extends Component {
 		.then(res => res.json())
 		.then(data => {
 			this.setState({
-				myPokemonList: data.pokemons
+				myPokemonList: data.pokemons,
+				mainPoke: data.pokemons[0]
 			})
 		})
 	}
@@ -135,7 +122,37 @@ class App extends Component {
 		})
 	}
 
+	selectWildPoke = (poke) => {
+		this.setState({
+			selectedPoke: poke,
+			wild: true,
+			renderMe: 'stats'
+		})
+	}
+
+	selectMyPoke = (poke) => {
+		this.setState({
+			selectedPoke: poke,
+			wild: false,
+			renderMe: 'stats'
+		})
+	}
+
+	makeMain = (poke) => {
+		this.setState({
+			mainPoke: poke
+		})
+	}
+
+	catchPoke = () => {
+		this.setState({
+			renderMe: 'fight'
+		})
+	}
+
+
 	render() {
+		console.log(this.state.mainPoke)
 		return (
 			// if user logs in (clicks submit), render map & user console- otherwise render opening page
 			this.state.enterPage ?
@@ -146,15 +163,19 @@ class App extends Component {
 						johtoRand={this.state.johtoRand}
 						hoennRand={this.state.hoennRand}
 						sinnohRand={this.state.sinnohRand}
-						renderRandomPoke={this.renderRandomPoke} />
+						renderRandomPoke={this.renderRandomPoke} 
+						selectWildPoke={this.selectWildPoke}
+						/>
 					<UserConsole
-						kanto={this.state.kanto}
-						johto={this.state.johto}
-						hoenn={this.state.hoenn}
-						sinnoh={this.state.sinnoh}
 						selectedPoke={this.state.selectedPoke}
-						wildPoke={this.state.wildPoke} 
-						myPokemonList={this.state.myPokemonList} /> 
+						mainPoke={this.state.mainPoke}
+						myPokemonList={this.state.myPokemonList}
+						selectMyPoke={this.selectMyPoke}
+						wild={this.state.wild}
+						renderMe={this.state.renderMe}
+						makeMain={this.makeMain}
+						catchPoke={this.catchPoke}
+						/> 
 				</Segment>
 
 				:

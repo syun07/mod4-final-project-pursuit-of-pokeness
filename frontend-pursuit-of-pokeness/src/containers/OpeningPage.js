@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import { Segment, Button, Form, Grid } from 'semantic-ui-react';
+import { Button, Form, Grid } from 'semantic-ui-react';
 import '../App.css'
 
 const OpeningPage = (props) => {

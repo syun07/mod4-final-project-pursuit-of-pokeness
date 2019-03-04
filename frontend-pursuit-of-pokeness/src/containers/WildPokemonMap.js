@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Region from '../components/Region'
 import '../stylesheets/WildPokeMap.css';
 
@@ -12,10 +12,10 @@ const WildPokemonMap = (props) => {
     return (
 
         <Segment id='map'>
-            <Region rand={props.kantoRand} name='kanto'/>
-            <Region rand={props.johtoRand} name='johto'/>
-            <Region rand={props.hoennRand} name='hoenn'/>
-            <Region rand={props.sinnohRand} name='sinnoh'/>
+            <Region rand={props.kantoRand} name='kanto' selectWildPoke={props.selectWildPoke}/>
+            <Region rand={props.johtoRand} name='johto' selectWildPoke={props.selectWildPoke}/>
+            <Region rand={props.hoennRand} name='hoenn' selectWildPoke={props.selectWildPoke}/>
+            <Region rand={props.sinnohRand} name='sinnoh' selectWildPoke={props.selectWildPoke}/>
 
             <Button id='refreshBtn'
                 onClick={props.renderRandomPoke}>
