@@ -32,8 +32,8 @@ const MyPokemon = (props) => {
 			poke={poke} />
 	)
 
-	return (
-		<Segment.Group className="UserConsole">
+	return(
+		<Segment.Group>
 		
 			<Segment compact>
 				<h3 className="labels">My Pokemon</h3>

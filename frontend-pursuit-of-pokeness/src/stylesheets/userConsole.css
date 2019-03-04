@@ -1,11 +1,16 @@
-.UserConsole {
+#userConsole {
+  margin-top: 0em
+}
+
+
+.magicCont {
     min-height: 500px;
     margin: 2px;
     padding: 2px;
     align-items: center;
   }
 
-  .myPokemon {
+  #myPokemon {
     height: 500px;
     overflow-y: scroll;
     white-space: pre-wrap;

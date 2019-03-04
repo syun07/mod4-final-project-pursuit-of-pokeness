@@ -7,7 +7,6 @@ import OpeningPage from './containers/OpeningPage'
 import { Segment } from 'semantic-ui-react';
 import './App.css';
 
-
 const PokeApi = 'http://localhost:3000/pokemons'
 
 class App extends Component {
@@ -67,18 +66,18 @@ class App extends Component {
 
 		// KANTO //
         let kantoNums = []
-        for (let i = 1; i < 5; i++) {
+        for (let i = 1; i < 7; i++) {
             kantoNums.push(Math.floor((Math.random() * 151) + 1))
         }
         
-        let newKanto = []
-        kantoNums.map(num => 
+        	let newKanto = []
+        	kantoNums.map(num => 
             newKanto.push(this.state.kanto.find(poke => poke.id === num))
-		)
-
+			)
+		
 		// JOHTO //
 		let johtoNums = []
-        for (let j = 1; j < 5; j++) {
+        for (let j = 1; j < 7; j++) {
 			johtoNums.push(Math.floor((Math.random() * 100) + 152))
         }
         
@@ -89,7 +88,7 @@ class App extends Component {
 
 		// HOENN //
 		let hoennNums = []
-        for (let k = 1; k < 5; k++) {
+        for (let k = 1; k < 7; k++) {
 			hoennNums.push(Math.floor((Math.random() * 135) + 252))
         }
         
@@ -100,7 +99,7 @@ class App extends Component {
 		
 		// SINNOH //
 		let sinnohNums = []
-        for (let s = 1; s < 5; s++) {
+        for (let s = 1; s < 7; s++) {
 			sinnohNums.push(Math.floor((Math.random() * 104) + 387))
         }
         
@@ -110,21 +109,14 @@ class App extends Component {
 		)
 
 		this.setState({
-			kantoRand: [...this.state.kantoRand, ...newKanto],
-			johtoRand: [...this.state.johtoRand, ...newJohto],
-			hoennRand: [...this.state.hoennRand, ...newHoenn],
-			sinnohRand: [...this.state.sinnohRand, ...newSinnoh],
-			// },() => console.log(this.state))
-		})
-	}
-	
-	submitHandler = event => {
-		this.setState({
-			enterPage: true
-		})
+			kantoRand: newKanto,
+			johtoRand: newJohto,
+			hoennRand: newHoenn,
+			sinnohRand: newSinnoh
+			},() => console.log(this.newSinnoh))
+		// })
 
-		this.renderRandomPoke()
-	}
+    }
 
 	render() {
 		// console.log(this.state)

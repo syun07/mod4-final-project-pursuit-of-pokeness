@@ -1,0 +1,67 @@
+.region{
+   position: absolute;
+ }
+
+ #kanto {
+   top: 536px;
+   left: 463px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ }  
+
+
+ #johto {
+   top: 222px;
+   left: 607px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ } 
+
+ #hoenn {
+  top: 517px;
+  left: 984px;
+   width: 430px;
+   padding: 10px;
+   height: 300px;
+ }
+ 
+ #sinnoh {
+  top: 437px;
+  left: 10px;
+  width: 430px;
+  padding: 10px;
+  height: 300px;
+ } 
+
+ #refreshBtn {
+  top: 883px;
+  left: -1em;
+}
+
+.pokeImg0 {
+  margin-bottom: 2em;
+}
+
+.pokeImg1 {
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.pokeImg2 {
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.pokeImg3 {
+  margin-left: 2em;
+} 
+
+.pokeImg4 {
+  margin-left: 2em;
+}
+
+.pokeImg5 {
+  margin-left: 2em;
+}

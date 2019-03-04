@@ -8,7 +8,7 @@ import '../stylesheets/userConsole.css'
 
 const UserConsole = (props) => {
     return (
-        <Grid columns='equal'>
+        <Grid id='userConsole' columns='equal'>
             <Grid.Column>
                 <MyPokemon 
                     kanto={props.kanto}
