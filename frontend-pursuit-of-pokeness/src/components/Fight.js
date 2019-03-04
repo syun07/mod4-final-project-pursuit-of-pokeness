@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Grid, Card } from 'semantic-ui-react'
+import { Grid, Card, Button } from 'semantic-ui-react'
 import '../stylesheets/userConsole.css'
 
 
@@ -32,6 +32,11 @@ class Fight extends Component {
 							</Grid.Column>
 							
 							<Grid.Column>
+								<div>
+									<Button id='catch-btn' inverted color='green' onClick={this.props.pokeFate}>
+										CATCH {this.props.selectedPoke.name.toUpperCase()}
+									</Button>
+								</div>
 							</Grid.Column>
 	
 						</Grid.Row>

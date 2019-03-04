@@ -3,8 +3,9 @@ class PokeUsersController < ApplicationController
         @poke_users = PokeUser.all
         render json: @poke_users, status: :ok
     end
+
     def create
-        @poke_user = PokeUser.new(poke_user_params)
+        @poke_user = PokeUser.new(pokemon_id: poke_user_params['pokemon_id'], user_id: poke_user_params['user_id'])
         if @poke_user.save
             render json: @poke_user, status: :created
         else
@@ -15,6 +16,6 @@ class PokeUsersController < ApplicationController
     private
 
     def poke_user_params
-        params.require(:poke_user).permit(:pokemon_id, :user_id)
+        params.permit(:pokemon_id, :user_id)
     end
 end

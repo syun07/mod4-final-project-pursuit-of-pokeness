@@ -70,3 +70,9 @@
     height: 450px;
     width: 450px;
   }
+
+  #catch-btn {
+    margin-right: 1em;
+    margin-top: 9em;
+    position: absolute;
+  }

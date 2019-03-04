@@ -14,6 +14,7 @@ const UserConsole = (props) => {
                     myPokemonList={props.myPokemonList}
                     selectMyPoke={props.selectMyPoke} 
                     mainPoke={props.mainPoke}
+                    currentUser={props.currentUser}
                     />
             </Grid.Column>
 
@@ -25,6 +26,7 @@ const UserConsole = (props) => {
                     renderMe={props.renderMe}
                     makeMain={props.makeMain}
                     catchPoke={props.catchPoke}
+                    pokeFate={props.pokeFate}
                     />
             </Grid.Column>
         </Grid>    

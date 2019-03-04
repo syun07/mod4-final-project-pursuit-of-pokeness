@@ -8,7 +8,7 @@ const CatchSuccess = (props) => {
 	return (
 		<Card id='failcard'>
 			<h4>
-				{props.wildPoke.name} fled!
+				{props.selectedPoke.name} fled!
 			</h4>
 		</Card>
 	)

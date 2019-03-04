@@ -73,7 +73,9 @@ class MagicContainer extends Component {
 		
 		const fight = <Fight
 			selectedPoke={this.props.selectedPoke}
-			mainPoke={this.props.mainPoke} />
+			mainPoke={this.props.mainPoke} 
+			pokeFate={this.props.pokeFate}
+			/>
 		
 		const success = <CatchSuccess
 			selectedPoke={this.props.selectedPoke} />

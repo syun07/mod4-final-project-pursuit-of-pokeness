@@ -9,6 +9,7 @@ import './App.css';
 
 const PokeApi = 'http://localhost:3000/pokemons'
 const UserApi = 'http://localhost:3000/users/'
+const PokeUserApi = 'http://localhost:3000/poke_users/'
 
 class App extends Component {
 	constructor(props) {
@@ -28,7 +29,8 @@ class App extends Component {
 			mainPoke: null,
 			wild: null,
 			enterPage: false,
-			renderMe: 'profile'
+			renderMe: 'profile',
+			currentUser: null
 		}
 	}
 
@@ -56,7 +58,8 @@ class App extends Component {
 		.then(data => {
 			this.setState({
 				myPokemonList: data.pokemons,
-				mainPoke: data.pokemons[0]
+				mainPoke: data.pokemons[0],
+				currentUser: data
 			})
 		})
 	}
@@ -150,6 +153,34 @@ class App extends Component {
 		})
 	}
 
+	pokeFate = () => {
+		let fate = Math.floor((Math.random() * 10) + 1)
+		if (fate <= 6) {
+			this.setState({
+				renderMe: 'success',
+				myPokemonList: [...this.state.myPokemonList, this.state.selectedPoke]
+			})
+			this.postPoke()
+		} else {
+			this.setState({
+				renderMe: 'fail',
+			})
+			this.renderRandomPoke()
+		}
+	} 
+
+	postPoke = () => {
+		let userpoke = {user_id: this.state.currentUser.id, pokemon_id: this.state.selectedPoke.id}
+		fetch(PokeUserApi, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json'
+			},
+			body: JSON.stringify(userpoke)
+		})
+	}
+
 
 	render() {
 		console.log(this.state.mainPoke)
@@ -175,6 +206,8 @@ class App extends Component {
 						renderMe={this.state.renderMe}
 						makeMain={this.makeMain}
 						catchPoke={this.catchPoke}
+						pokeFate={this.pokeFate}
+						currentUser={this.state.currentUser}
 						/> 
 				</Segment>
 
