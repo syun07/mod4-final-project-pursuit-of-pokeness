@@ -18,15 +18,15 @@ class PokeStats extends React.Component {
 				
 					<div className='pokeCardContent'>
 						<div>
-							<h4 className="header">{name.toUpperCase()}</h4>
+							<h3 className="header">{name.toUpperCase()}</h3>
 						</div>
 						
 						<div>
-							<p className="header"><strong>Region:</strong> {region}</p>
+							<p className="header"><strong>REGION: </strong> {region.toUpperCase()}</p>
 						</div>
 
 						<div>
-							<p className="header"><strong>Type:</strong> {kind}</p>
+							<p className="header"><strong>TYPE: </strong> {kind.toUpperCase()}</p>
 						</div>
 						
 						<div className="extra content">

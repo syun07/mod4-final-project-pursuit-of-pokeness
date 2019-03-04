@@ -11,10 +11,11 @@ const UserConsole = (props) => {
         <Grid id='userConsole' columns='equal'>
             <Grid.Column>
                 <MyPokemon 
-                    myPokemonList={props.myPokemonList}
                     selectMyPoke={props.selectMyPoke} 
                     mainPoke={props.mainPoke}
                     currentUser={props.currentUser}
+                    filterByRegion={props.filterByRegion}
+                    filteredPoke={props.filteredPoke}
                     />
             </Grid.Column>
 
@@ -27,6 +28,7 @@ const UserConsole = (props) => {
                     makeMain={props.makeMain}
                     catchPoke={props.catchPoke}
                     pokeFate={props.pokeFate}
+                    currentUser={props.currentUser}
                     />
             </Grid.Column>
         </Grid>    

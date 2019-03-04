@@ -7,53 +7,6 @@ import CatchFail from './CatchFail'
 
 import { Segment } from 'semantic-ui-react'
 
-
-
-// class MagicContainer extends Component {
-// 	constructor(props) {
-// 		super(props)
-// 	}
-    
-// 	render() {
-// 		console.log(this.props.selectedPoke)
-
-// 		// const profile = <Profile />
-// 		const pokeStats = <PokeStats selectedPoke={this.props.selectedPoke} wild={this.props.wild} />
-
-// 		// const fight = <Fight selectedPoke={this.state.selectedPoke} wildPoke={this.state.wildPoke} />
-
-// 		// const success = <CatchSuccess wildPoke={this.state.wildPoke} />
-
-// 		const fail = <CatchFail wildPoke={this.props.wildPoke} />
-
-
-// 		return (
-// 			<Segment.Group className="magicCont">
-// 				<Segment compact >
-// 					<h3 className="labels">Magic Container</h3>
-// 				</Segment>
-				
-// 				{this.props.selectedPoke === null ?
-// 					<Segment id="magic">
-// 						{fail}
-// 					</Segment>
-// 					:
-// 					<Segment id="magic">
-// 						{pokeStats}
-// 					</Segment>
-// 				}
-
-// 			</Segment.Group>
-
-// 		)
-// 	}
-// }
-
-
-// export default MagicContainer
-
-
-
 class MagicContainer extends Component {
 	constructor(props) {
 		super(props)
@@ -62,26 +15,35 @@ class MagicContainer extends Component {
 	render() {
 		// console.log(this.props.selectedPoke)
 
-		const profile = <Profile />
+		const profile =
+			<Profile 
+				currentUser={this.props.currentUser}
+			/>
 
-		const pokeStats = <PokeStats
-			selectedPoke={this.props.selectedPoke}
-			wild={this.props.wild}
-			makeMain={this.props.makeMain} 
-			catchPoke={this.props.catchPoke}
+		const pokeStats =
+			<PokeStats
+				selectedPoke={this.props.selectedPoke}
+				wild={this.props.wild}
+				makeMain={this.props.makeMain} 
+				catchPoke={this.props.catchPoke}
 			/>
 		
-		const fight = <Fight
-			selectedPoke={this.props.selectedPoke}
-			mainPoke={this.props.mainPoke} 
-			pokeFate={this.props.pokeFate}
+		const fight =
+			<Fight
+				selectedPoke={this.props.selectedPoke}
+				mainPoke={this.props.mainPoke} 
+				pokeFate={this.props.pokeFate}
 			/>
 		
-		const success = <CatchSuccess
-			selectedPoke={this.props.selectedPoke} />
+		const success =
+			<CatchSuccess
+				selectedPoke={this.props.selectedPoke} 
+			/>
 		
-		const fail = <CatchFail
-			selectedPoke={this.props.selectedPoke} />
+		const fail =
+			<CatchFail
+				selectedPoke={this.props.selectedPoke} 
+			/>
 
 		let renderMe
 

@@ -25,6 +25,7 @@ class App extends Component {
 			hoennRand: [],
 			sinnohRand: [],
 			myPokemonList: [],
+			filteredPoke: [],
 			selectedPoke: null,
 			mainPoke: null,
 			wild: null,
@@ -58,6 +59,7 @@ class App extends Component {
 		.then(data => {
 			this.setState({
 				myPokemonList: data.pokemons,
+				filteredPoke: data.pokemons,
 				mainPoke: data.pokemons[0],
 				currentUser: data
 			})
@@ -145,6 +147,7 @@ class App extends Component {
 		this.setState({
 			mainPoke: poke
 		})
+		this.forceUpdate();
 	}
 
 	catchPoke = () => {
@@ -181,6 +184,12 @@ class App extends Component {
 		})
 	}
 
+	filterByRegion = event => {
+
+		const filtered = this.state.myPokemonList.filter(pokemon => pokemon.region === event.target.name)
+		event.target.name === 'all' ? this.setState({filteredPoke: this.state.myPokemonList}) : this.setState({filteredPoke: filtered})
+	}
+
 
 	render() {
 		console.log(this.state.mainPoke)
@@ -200,7 +209,6 @@ class App extends Component {
 					<UserConsole
 						selectedPoke={this.state.selectedPoke}
 						mainPoke={this.state.mainPoke}
-						myPokemonList={this.state.myPokemonList}
 						selectMyPoke={this.selectMyPoke}
 						wild={this.state.wild}
 						renderMe={this.state.renderMe}
@@ -208,6 +216,8 @@ class App extends Component {
 						catchPoke={this.catchPoke}
 						pokeFate={this.pokeFate}
 						currentUser={this.state.currentUser}
+						filterByRegion={this.filterByRegion}
+						filteredPoke={this.state.filteredPoke}
 						/> 
 				</Segment>
 

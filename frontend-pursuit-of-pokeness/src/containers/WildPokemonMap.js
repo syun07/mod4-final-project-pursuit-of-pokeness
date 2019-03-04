@@ -17,7 +17,9 @@ const WildPokemonMap = (props) => {
             <Region rand={props.hoennRand} name='hoenn' selectWildPoke={props.selectWildPoke}/>
             <Region rand={props.sinnohRand} name='sinnoh' selectWildPoke={props.selectWildPoke}/>
 
-            <Button id='refreshBtn'
+            <Button
+                id='refreshBtn'
+                color='orange'
                 onClick={props.renderRandomPoke}>
                 Refresh
             </Button>

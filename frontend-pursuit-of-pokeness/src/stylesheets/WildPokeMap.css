@@ -60,3 +60,9 @@
 .pokeImg5 {
   margin-left: 2em;
 }
+
+#refreshBtn {
+  position: absolute;
+  margin-left: 45em;
+  margin-top: 45em;
+}
