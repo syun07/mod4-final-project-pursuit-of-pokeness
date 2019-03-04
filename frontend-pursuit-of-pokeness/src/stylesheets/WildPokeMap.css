@@ -3,8 +3,8 @@
  }
 
  #kanto {
-   top: 536px;
-   left: 463px;
+  top: 375px;
+  left: 446px;
    width: 430px;
    padding: 10px;
    height: 300px;
@@ -12,23 +12,23 @@
 
 
  #johto {
-   top: 222px;
-   left: 607px;
+    top: 47px;
+    left: 430px;
    width: 430px;
    padding: 10px;
    height: 300px;
  } 
 
  #hoenn {
-  top: 517px;
-  left: 984px;
+  top: 357px;
+  left: 936px;
   width: 430px;
   padding: 10px;
   height: 300px;
  }
  
  #sinnoh {
-  top: 437px;
+  top: 179px;
   left: 10px;
   width: 430px;
   padding: 10px;
