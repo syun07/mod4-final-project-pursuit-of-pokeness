@@ -116,13 +116,19 @@ class App extends Component {
 			},() => console.log(this.newSinnoh))
 		// })
 
-    }
+	}
+	
+	submitHandler = event => {
+		this.setState({
+			enterPage: true
+		})
+	}
 
 	render() {
 		// console.log(this.state)
 		return (
 			// if user logs in (clicks submit), render map & user console- otherwise render opening page
-			this.state.enterPage ?
+			// this.state.enterPage ?
 				
 				<Segment id="app">
 					<WildPokemonMap
@@ -140,12 +146,12 @@ class App extends Component {
 						wildPoke={this.state.wildPoke} /> 
 				</Segment>
 
-				:
+				// :
 
-				<Segment id='app'>
-					<OpeningPage
-						submitHandler={this.submitHandler} />
-				</Segment>
+				// <Segment id='app'>
+				// 	<OpeningPage
+				// 		submitHandler={this.submitHandler} />
+				// </Segment>
 			
 		);
 	}

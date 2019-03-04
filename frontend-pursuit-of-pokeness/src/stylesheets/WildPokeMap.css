@@ -22,9 +22,9 @@
  #hoenn {
   top: 517px;
   left: 984px;
-   width: 430px;
-   padding: 10px;
-   height: 300px;
+  width: 430px;
+  padding: 10px;
+  height: 300px;
  }
  
  #sinnoh {
@@ -34,11 +34,6 @@
   padding: 10px;
   height: 300px;
  } 
-
- #refreshBtn {
-  top: 883px;
-  left: -1em;
-}
 
 .pokeImg0 {
   margin-bottom: 2em;

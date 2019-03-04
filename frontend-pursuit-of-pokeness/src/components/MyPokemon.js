@@ -39,7 +39,7 @@ const MyPokemon = (props) => {
 				<h3 className="labels">My Pokemon</h3>
 			</Segment>
 
-			<Segment compact className='myPokemon'>
+			<Segment compact id='myPokemon'>
 				<Button
 					inverted color='blue' >
 					Kanto
