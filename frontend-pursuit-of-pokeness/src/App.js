@@ -8,6 +8,7 @@ import { Segment } from 'semantic-ui-react';
 import './App.css';
 
 const PokeApi = 'http://localhost:3000/pokemons'
+const UserApi = 'http://localhost:3000/users/'
 
 class App extends Component {
 	constructor(props) {
@@ -40,7 +41,8 @@ class App extends Component {
 			johtoRand: [],
 			hoennRand: [],
 			sinnohRand: [],
-			enterPage: false
+			enterPage: false,
+			myPokemonList: []
 		}
 	}
 
@@ -58,6 +60,16 @@ class App extends Component {
 				johto: j,
 				sinnoh: s,
 				hoenn: h
+			})
+
+			let id = '1';
+			return fetch(`${UserApi}${id}`)
+		})
+			
+		.then(res => res.json())
+		.then(data => {
+			this.setState({
+				myPokemonList: data.pokemons
 			})
 		})
 	}
@@ -113,8 +125,7 @@ class App extends Component {
 			johtoRand: newJohto,
 			hoennRand: newHoenn,
 			sinnohRand: newSinnoh
-			},() => console.log(this.newSinnoh))
-		// })
+		})
 
 	}
 	
@@ -125,7 +136,6 @@ class App extends Component {
 	}
 
 	render() {
-		// console.log(this.state)
 		return (
 			// if user logs in (clicks submit), render map & user console- otherwise render opening page
 			this.state.enterPage ?
@@ -143,7 +153,8 @@ class App extends Component {
 						hoenn={this.state.hoenn}
 						sinnoh={this.state.sinnoh}
 						selectedPoke={this.state.selectedPoke}
-						wildPoke={this.state.wildPoke} /> 
+						wildPoke={this.state.wildPoke} 
+						myPokemonList={this.state.myPokemonList} /> 
 				</Segment>
 
 				:

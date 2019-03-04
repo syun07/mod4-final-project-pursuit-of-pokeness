@@ -6,31 +6,14 @@ import { Card, Button } from 'semantic-ui-react'
 
 
 const MyPokemon = (props) => {
-	// console.log(props)
 
-	const mapKanto = props.kanto.map(poke =>
+	const mapMyPoke = props.myPokemonList.map(poke => 
 		<PokeIcon
 			key={poke.id}
-			poke={poke} />
+			poke={poke}
+		/>
 	)
-	
-	const mapJohto = props.johto.map(poke =>
-		<PokeIcon
-			key={poke.id}
-			poke={poke} />
-	)
-	
-	const mapHoenn = props.hoenn.map(poke =>
-		<PokeIcon
-			key={poke.id}
-			poke={poke} />
-	)
-	
-	const mapSinnoh = props.sinnoh.map(poke =>
-		<PokeIcon
-			key={poke.id}
-			poke={poke} />
-	)
+
 
 	return(
 		<Segment.Group>
@@ -48,10 +31,7 @@ const MyPokemon = (props) => {
 				<br /><br />
 				
 				<Card.Group itemsPerRow={6}>
-					{mapKanto}
-					{mapJohto}
-					{mapHoenn}
-					{mapSinnoh}
+					{mapMyPoke}
 				</Card.Group>
 			</Segment>
 

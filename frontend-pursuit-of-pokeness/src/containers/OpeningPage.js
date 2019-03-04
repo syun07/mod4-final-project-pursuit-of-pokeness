@@ -12,14 +12,12 @@ const OpeningPage = (props) => {
 				onSubmit={props.submitHandler}>
 				<h1 id='title'>THE PURSUIT OF POKENESS</h1>
 				<Form.Field>
-					<label>Name</label>
 					<input 
 						placeholder='Name'
 						name='name' />
 				</Form.Field>
 				
 				<Form.Field>
-					<label>Password</label>
 					<input 
 						placeholder='Password'
 						name='password' />

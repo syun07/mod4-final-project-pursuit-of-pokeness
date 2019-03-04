@@ -35,3 +35,7 @@ while s <= 490
     Pokemon.create(name: data['name'], kind: data['types'][0]['type']['name'], hp: data['stats'][-1]['base_stat'], region: 'sinnoh', front: data['sprites']['front_default'], back: data['sprites']['back_default'])
     s+=1
 end
+
+brian.pokemons << Pokemon.all[0]
+brian.pokemons << Pokemon.all[37]
+brian.pokemons << Pokemon.all[54]

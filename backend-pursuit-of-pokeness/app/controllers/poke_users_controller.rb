@@ -1,4 +1,8 @@
 class PokeUsersController < ApplicationController
+    def index
+        @poke_users = PokeUser.all
+        render json: @poke_users, status: :ok
+    end
     def create
         @poke_user = PokeUser.new(poke_user_params)
         if @poke_user.save

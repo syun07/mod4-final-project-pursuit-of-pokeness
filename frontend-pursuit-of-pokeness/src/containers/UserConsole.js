@@ -11,10 +11,7 @@ const UserConsole = (props) => {
         <Grid id='userConsole' columns='equal'>
             <Grid.Column>
                 <MyPokemon 
-                    kanto={props.kanto}
-                    johto={props.johto}
-                    hoenn={props.hoenn}
-                    sinnoh={props.sinnoh} />
+                    myPokemonList={props.myPokemonList}/>
             </Grid.Column>
 
             <Grid.Column>
