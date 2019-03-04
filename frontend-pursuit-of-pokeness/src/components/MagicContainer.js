@@ -30,7 +30,7 @@ class MagicContainer extends Component {
 		// const fail = <CatchFail wildPoke={this.state.wildPoke} />
 
 		return (
-			<Segment.Group className="UserConsole">
+			<Segment.Group className="magicCont">
 				<Segment compact >
 					<h3 className="labels">Magic Container</h3>
 				</Segment>

@@ -16,13 +16,13 @@ const MyPokemon = (props) => {
 		)
 
 	return(
-		<Segment.Group className="UserConsole">
+		<Segment.Group>
 		
 			<Segment compact>
 				<h3 className="labels">My Pokemon</h3>
 			</Segment>
 
-			<Segment compact className='myPokemon'>
+			<Segment compact id='myPokemon'>
 				<Card.Group itemsPerRow={6}>
 					{mapPokemon}
 				</Card.Group>

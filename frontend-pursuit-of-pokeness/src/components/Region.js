@@ -5,8 +5,8 @@ import PokeIcon from './PokeIcon';
 
 const Region = (props) => {
 	
-	const pokeList = props.rand.map(poke => 
-		<img src={poke.front}></img>) 
+	const pokeList = props.rand.map((poke, index) => 
+		<img src={poke.front} className={`pokeImg${index}`}></img>) 
 
 	return(
 		<div className='region' id={props.name}>

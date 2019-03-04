@@ -5290,3 +5290,244 @@ Processing by PokemonsController#index as */*
 Completed 200 OK in 2273ms (Views: 1702.1ms | ActiveRecord: 558.6ms)
 
 
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:13:52 -0500
+  [1m[35m (30.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (24.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 513ms (Views: 328.6ms | ActiveRecord: 160.2ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:16:52 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (35.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 808ms (Views: 671.8ms | ActiveRecord: 126.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:19:30 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (14.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1075ms (Views: 1050.3ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:19:36 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (11.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 789ms (Views: 766.4ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:32:47 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (49.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 700ms (Views: 640.6ms | ActiveRecord: 49.8ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:38:25 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (537.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 988ms (Views: 443.0ms | ActiveRecord: 537.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:39:12 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (44.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 772ms (Views: 719.8ms | ActiveRecord: 44.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:42:30 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (62.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1322ms (Views: 1250.4ms | ActiveRecord: 62.0ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:43:13 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (26.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 857ms (Views: 821.4ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:46:32 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (25.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1004ms (Views: 969.2ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:47:11 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (36.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 404ms (Views: 357.3ms | ActiveRecord: 36.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:47:18 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (12.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 377ms (Views: 364.2ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:47:41 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (63.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 468ms (Views: 393.7ms | ActiveRecord: 63.6ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:48:18 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (45.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 961ms (Views: 901.4ms | ActiveRecord: 45.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:48:34 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (14.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 584ms (Views: 558.7ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:49:23 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (12.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 445ms (Views: 424.5ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:53:30 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (9.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 943ms (Views: 921.6ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:54:16 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (53.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 945ms (Views: 881.8ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:55:10 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (15.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1707ms (Views: 1680.4ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:55:36 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (58.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 749ms (Views: 682.3ms | ActiveRecord: 58.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:56:32 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (11.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1254ms (Views: 1232.0ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:57:52 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (24.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1411ms (Views: 1373.2ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:58:04 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (25.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1356ms (Views: 1319.4ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 07:58:14 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (11.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 874ms (Views: 860.3ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:01:31 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (52.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1235ms (Views: 1170.5ms | ActiveRecord: 52.2ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:01:56 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (89.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1675ms (Views: 1533.8ms | ActiveRecord: 89.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:10:36 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (204.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1563ms (Views: 1348.3ms | ActiveRecord: 204.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:11:22 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (48.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 881ms (Views: 818.3ms | ActiveRecord: 48.6ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:13:23 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (13.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1046ms (Views: 1016.4ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:19:47 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (23.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1080ms (Views: 1043.5ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:20:08 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (57.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1392ms (Views: 1322.9ms | ActiveRecord: 57.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:22:58 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (175.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1800ms (Views: 1611.3ms | ActiveRecord: 175.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:27:45 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (90.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1311ms (Views: 1201.6ms | ActiveRecord: 90.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:27:58 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (26.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1602ms (Views: 1564.3ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:28:46 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (63.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1361ms (Views: 1287.0ms | ActiveRecord: 63.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:34:27 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (86.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1833ms (Views: 1723.8ms | ActiveRecord: 86.8ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:41:52 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (156.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1539ms (Views: 1362.7ms | ActiveRecord: 156.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:42:27 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (49.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 1713ms (Views: 1644.1ms | ActiveRecord: 49.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:44:01 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (5.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 897ms (Views: 884.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-04 08:49:37 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (31.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+Completed 200 OK in 956ms (Views: 902.2ms | ActiveRecord: 31.7ms)
+
+

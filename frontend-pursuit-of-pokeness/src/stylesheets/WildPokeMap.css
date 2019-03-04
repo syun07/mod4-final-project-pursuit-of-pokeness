@@ -1,5 +1,4 @@
 .region{
-   border: 2px solid red;
    position: absolute;
  }
 
@@ -21,21 +20,48 @@
  } 
 
  #hoenn {
-   top: 595px;
-   left: 1000px;
+  top: 517px;
+  left: 984px;
    width: 430px;
    padding: 10px;
    height: 300px;
  }
  
  #sinnoh {
-   top: 595px;
-   left: 10px;
-   width: 430px;
-   padding: 10px;
-   height: 300px;
+  top: 437px;
+  left: 10px;
+  width: 430px;
+  padding: 10px;
+  height: 300px;
  } 
 
  #refreshBtn {
-  top: 916px;
- }
+  top: 883px;
+  left: -1em;
+}
+
+.pokeImg0 {
+  margin-bottom: 2em;
+}
+
+.pokeImg1 {
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.pokeImg2 {
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.pokeImg3 {
+  margin-left: 2em;
+} 
+
+.pokeImg4 {
+  margin-left: 2em;
+}
+
+.pokeImg5 {
+  margin-left: 2em;
+}
