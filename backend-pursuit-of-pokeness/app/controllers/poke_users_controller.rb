@@ -1,4 +1,5 @@
 class PokeUsersController < ApplicationController
+    before_action :authorized, except: [:index, :create]
     def index
         @poke_users = PokeUser.all
         render json: @poke_users, status: :ok

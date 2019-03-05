@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :authorized, except: [:index, :show, :create]
+
     def index
         @users = User.all
         render json: @users, status: :ok
@@ -12,7 +14,9 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            render json: @user, status: :created
+            @token = encode_token(user_id: @user.id)
+            @user.pokemons << Pokemon.all[0]
+            render json: { user: @user, jwt: @token }, status: :created
         else
             render json: @user.errors.full_messages, status: :unprocessable_entity
         end
@@ -21,6 +25,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name)
+        params.permit(:name, :image, :password)
     end
 end

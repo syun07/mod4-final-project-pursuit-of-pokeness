@@ -58,3 +58,16 @@ input {
   width: 345px;
 }
 
+#buttons {
+  position: absolute;
+  margin-left: 38em;
+  margin-top: 30em;
+}
+
+#login-btn, #signup-btn {
+  font-family: 'Bangers';
+  font-size: 18px;
+  letter-spacing: 5px;
+  margin-left: 2em;
+}
+

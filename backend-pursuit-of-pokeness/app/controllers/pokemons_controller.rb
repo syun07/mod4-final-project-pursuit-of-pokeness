@@ -1,4 +1,6 @@
 class PokemonsController < ApplicationController
+    before_action :authorized, except: [:index, :create]
+
   def index
         @pokemons = Pokemon.all
         render json: @pokemons, status: :ok
