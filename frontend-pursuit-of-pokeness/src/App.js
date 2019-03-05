@@ -33,7 +33,7 @@ class App extends Component {
 			enterPage: false,
 			renderMe: 'profile',
 			currentUser: null,
-			currentUserId: 1,
+			currentUserId: null,
 			name: "",
 			password: "",
 			newName: "",
@@ -56,17 +56,6 @@ class App extends Component {
 					johto: j,
 					sinnoh: s,
 					hoenn: h
-				})
-				return fetch(`${UserApi}${this.state.currentUserId.toString()}`)
-			})
-			
-			.then(res => res.json())
-			.then(data => {
-				this.setState({
-					myPokemonList: data.pokemons,
-					filteredPoke: data.pokemons,
-					mainPoke: data.pokemons[0],
-					currentUser: data
 				})
 			})
 	}
@@ -140,11 +129,22 @@ class App extends Component {
 	handleLogin = event => {
 		event.preventDefault();
 		this.getAuthToken({ name: this.state.name, password: this.state.password }).then(payload => {
+			// if (login success), cool do normal thing, else, less cool, set things on fire
 			localStorage.setItem("token", payload.token)
 			this.setState({
 				currentUserId: payload.user.id,
 				enterPage: true
-			},()=>console.log(this.state.currentUserId))
+			})
+			return fetch(`${UserApi}${payload.user.id.toString()}`)
+		})
+		.then(res => res.json())
+		.then(data => {
+			this.setState({
+				myPokemonList: data.pokemons,
+				filteredPoke: data.pokemons,
+				mainPoke: data.pokemons[0],
+				currentUser: data
+			})
 		})
 		this.renderRandomPoke()
 	}

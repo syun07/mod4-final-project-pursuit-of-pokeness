@@ -7,16 +7,17 @@ import '../stylesheets/userConsole.css'
 
 
 const UserConsole = (props) => {
+    if (props.currentUser === null) { return null }
     return (
         <Grid id='userConsole' columns='equal'>
             <Grid.Column>
-                <MyPokemon 
-                    selectMyPoke={props.selectMyPoke} 
+                <MyPokemon
+                    selectMyPoke={props.selectMyPoke}
                     mainPoke={props.mainPoke}
                     currentUser={props.currentUser}
                     filterByRegion={props.filterByRegion}
                     filteredPoke={props.filteredPoke}
-                    />
+                />
             </Grid.Column>
 
             <Grid.Column>

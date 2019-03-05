@@ -14,10 +14,12 @@ class OpeningPage extends Component {
 
 
 	handleShow = (event) => {
-		this.props.handleSignup(event)
+		event.preventDefault()
 		this.setState({
-			whichForm: 's'
+			whichForm: 'l'
 		})
+		event.target.reset()
+		this.props.handleSignup(event)
 	}
 
 	render() {
@@ -39,7 +41,7 @@ class OpeningPage extends Component {
 				<input
 					placeholder='Image URL'
 					name='newImage'
-				/>
+					onChange={(event) => this.props.handleChange(event)} />
 			</Form.Field>
 			
 			<Form.Field>
@@ -73,6 +75,7 @@ class OpeningPage extends Component {
 			<input
 				placeholder='Password'
 				name='password'
+				type='password'
 				onChange={(event) => this.props.handleChange(event)} />
 		</Form.Field>
 	
