@@ -7,14 +7,8 @@ import CatchFail from './CatchFail'
 
 import { Segment } from 'semantic-ui-react'
 
-class MagicContainer extends Component {
-	constructor(props) {
-		super(props)
-	}
-    
+class MagicContainer extends Component {    
 	render() {
-		// console.log(this.props.selectedPoke)
-
 		const profile =
 			<Profile 
 				currentUser={this.props.currentUser}

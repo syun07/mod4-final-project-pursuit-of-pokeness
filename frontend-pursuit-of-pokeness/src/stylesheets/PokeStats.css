@@ -18,4 +18,13 @@
 
 ui.button {
 	margin-bottom: 3em;
+	font-family: 'Bangers', cursive;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+#choose-catch {
+	font-family: 'Bangers';
+	font-size: 15px;
+	letter-spacing: 3px;
 }

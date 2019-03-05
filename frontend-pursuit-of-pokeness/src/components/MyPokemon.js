@@ -3,13 +3,14 @@ import PokeIcon from './PokeIcon'
 
 import { Segment } from 'semantic-ui-react'
 import { Card, Button } from 'semantic-ui-react'
+import '../stylesheets/userConsole.css'
 
 
 const MyPokemon = (props) => {
 
-	const mapMyPoke = props.filteredPoke.map(poke => 
+	const mapMyPoke = props.filteredPoke.map((poke, index) => 
 		<PokeIcon
-			key={poke.id}
+			key={index}
 			poke={poke}
 			selectMyPoke={props.selectMyPoke}
 			mainPoke={props.mainPoke}

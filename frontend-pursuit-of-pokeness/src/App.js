@@ -74,10 +74,10 @@ class App extends Component {
             kantoNums.push(Math.floor((Math.random() * 151) + 1))
         }
         
-        	let newKanto = []
-        	kantoNums.map(num => 
-            newKanto.push(this.state.kanto.find(poke => poke.id === num))
-			)
+		let newKanto = []
+		kantoNums.map(num => 
+		newKanto.push(this.state.kanto.find(poke => poke.id === num))
+		)
 		
 		// JOHTO //
 		let johtoNums = []
@@ -125,6 +125,7 @@ class App extends Component {
 		this.setState({
 			enterPage: true
 		})
+		this.renderRandomPoke()
 	}
 
 	selectWildPoke = (poke) => {
@@ -147,7 +148,6 @@ class App extends Component {
 		this.setState({
 			mainPoke: poke
 		})
-		this.forceUpdate();
 	}
 
 	catchPoke = () => {
@@ -161,8 +161,9 @@ class App extends Component {
 		if (fate <= 6) {
 			this.setState({
 				renderMe: 'success',
-				myPokemonList: [...this.state.myPokemonList, this.state.selectedPoke]
-			})
+				myPokemonList: [...this.state.filteredPoke, this.state.selectedPoke]
+			}, () => console.log(this.state.myPokemonList))
+			this.renderRandomPoke()
 			this.postPoke()
 		} else {
 			this.setState({
@@ -185,14 +186,14 @@ class App extends Component {
 	}
 
 	filterByRegion = event => {
-
 		const filtered = this.state.myPokemonList.filter(pokemon => pokemon.region === event.target.name)
+		console.log(filtered)
 		event.target.name === 'all' ? this.setState({filteredPoke: this.state.myPokemonList}) : this.setState({filteredPoke: filtered})
 	}
 
 
 	render() {
-		console.log(this.state.mainPoke)
+		console.log(this.state)
 		return (
 			// if user logs in (clicks submit), render map & user console- otherwise render opening page
 			this.state.enterPage ?

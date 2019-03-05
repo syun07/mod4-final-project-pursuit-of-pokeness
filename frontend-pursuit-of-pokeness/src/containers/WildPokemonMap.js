@@ -7,8 +7,6 @@ import { Segment, Button } from 'semantic-ui-react';
 
 
 const WildPokemonMap = (props) => {
-    // console.log('random poke', props)
-
     return (
 
         <Segment id='map'>

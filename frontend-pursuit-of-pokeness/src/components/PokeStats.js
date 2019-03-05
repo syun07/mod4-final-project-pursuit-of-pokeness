@@ -39,6 +39,7 @@ class PokeStats extends React.Component {
 						<br />
 						{this.props.wild ?
 							<Button compact
+								id='choose-catch'
 								color='green'
 								onClick={this.props.catchPoke}>
 								Catch

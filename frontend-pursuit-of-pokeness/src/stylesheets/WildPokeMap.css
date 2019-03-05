@@ -63,6 +63,9 @@
 
 #refreshBtn {
   position: absolute;
-  margin-left: 45em;
-  margin-top: 45em;
+  margin-left: 42em;
+  margin-top: 41em; 
+  font-family: 'Bangers';
+  font-size: 15px;
+  letter-spacing: 3px;
 }

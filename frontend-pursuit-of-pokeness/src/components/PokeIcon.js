@@ -3,8 +3,6 @@ import { Card } from 'semantic-ui-react'
 import '../stylesheets/PokeIcon.css'
 
 const PokeIcon = (props) => {
-    // console.log(props)
-
     const { name, front } = props.poke
 
     return (

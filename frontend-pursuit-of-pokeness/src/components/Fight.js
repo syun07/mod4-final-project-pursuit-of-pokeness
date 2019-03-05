@@ -5,10 +5,6 @@ import '../stylesheets/userConsole.css'
 
 
 class Fight extends Component { 
-	constructor() {
-		super();
-	}
-
 	render() {
 		return (
 			<Card.Group>

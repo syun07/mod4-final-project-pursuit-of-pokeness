@@ -4,8 +4,11 @@ const Region = (props) => {
 	
 	const pokeList = props.rand.map((poke, index) => 
 		<img
+			key={index}
+			value={poke.name}
 			src={poke.front}
 			className={`pokeImg${index}`}
+			alt={poke.name}
 			onClick={() => props.selectWildPoke(poke)}>
 		</img>) 
 

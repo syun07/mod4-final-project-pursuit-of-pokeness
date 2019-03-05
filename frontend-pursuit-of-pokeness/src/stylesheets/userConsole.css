@@ -1,9 +1,8 @@
 #userConsole {
   margin-top: 0em;
   height: 100%;
-  width: 100%
+  width: 100%;
 }
-
 
 .magicCont {
     min-height: 500px;
@@ -75,4 +74,14 @@
     margin-right: 1em;
     margin-top: 9em;
     position: absolute;
+    font-family: 'Bangers', cursive;
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  #myPokemon * {
+    font-family: 'Bangers', cursive;
+    font-size: 17px;
+    letter-spacing: 3px;
+
   }
