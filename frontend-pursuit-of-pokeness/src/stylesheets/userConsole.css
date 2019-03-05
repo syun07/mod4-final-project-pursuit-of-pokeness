@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+#left-container {
+  box-shadow: 30px;
+}
+
 .magicCont {
     min-height: 500px;
     margin: 2px;
@@ -25,6 +29,10 @@
   }
 
   .labels {
+    font-family: 'Bangers', cursive;
+    font-size: 32px;
+    letter-spacing: 6px;
+    color: #3d99b2;
     padding: 5px;
     justify-content:center;
     text-align: center;
@@ -80,8 +88,7 @@
   }
 
   #myPokemon * {
-    font-family: 'Bangers', cursive;
-    font-size: 17px;
+    font-size: 18px;
     letter-spacing: 3px;
-
+    width: fit-content;
   }

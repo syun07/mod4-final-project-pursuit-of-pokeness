@@ -27,98 +27,117 @@ class OpeningPage extends Component {
 
 		const signup = 
 			<Form
-			id='login'
+			id='signup'
 			onSubmit={(event) => this.handleShow(event)}>
-			<h1 id='title'>THE PURSUIT OF POKENESS</h1>
+			<h1 id='title'>SIGN UP</h1>
 			<Form.Field>
 				<input
-					placeholder='Name'
+					placeholder='NAME'
 					name='newName'
 					onChange={(event) => this.props.handleChange(event)} />
 			</Form.Field>
 			
 			<Form.Field>
 				<input
-					placeholder='Image URL'
+					placeholder='PROFILE PICTURE'
 					name='newImage'
 					onChange={(event) => this.props.handleChange(event)} />
 			</Form.Field>
 			
 			<Form.Field>
 				<input
-					placeholder='Password'
+					placeholder='PASSWORD'
 					name='newPassword'
+					type='password'
 					onChange={(event) => this.props.handleChange(event)} />
 			</Form.Field>
 		
 			<Button
 				id='submit-btn'
+				color='orange'
 				type='submit'>
-				Submit
+				SIGN UP
 			</Button>
-		
 			</Form>
+			
 		
 		const login = 
 		<Form
 		id='login'
 		onSubmit={this.props.handleLogin}>
-		<h1 id='title'>THE PURSUIT OF POKENESS</h1>
+		<h1 id='title'>LOGIN TO PLAY!</h1>
 		<Form.Field>
 			<input
-				placeholder='Name'
+				placeholder='NAME'
 				name='name'
 				onChange={(event) => this.props.handleChange(event)} />
 		</Form.Field>
 		
 		<Form.Field>
 			<input
-				placeholder='Password'
+				placeholder='PASSWORD'
 				name='password'
 				type='password'
 				onChange={(event) => this.props.handleChange(event)} />
 		</Form.Field>
 	
-		<Button
-			id='submit-btn'
-			type='submit'>
-			Submit
-		</Button>
+			<Button
+				id='submit-btn'
+				color='orange'
+				type='submit'>
+				LOGIN
+			</Button>
 	
 		</Form>
 		
 
 		const buttons = 
 			<div id='buttons'>
+				<h1 id='title'>THE PURSUIT OF POKENESS</h1>
+				<br />
 				<Button
 					id='login-btn'
-					color='blue'
+					inverted color='standard'
 					onClick={() => this.setState({whichForm: 'l'})}>
-					Login
+					LOGIN
 				</Button>
 
 				<Button
 					id='signup-btn'
 					color='orange'
 					onClick={() => this.setState({whichForm: 's'})}>
-					Signup
+					SIGN UP
 				</Button>
 			</div>
 
+		const goBackBtn =
+			<div>
+				<Button
+					id='back-btn'
+					inverted color='standard'
+					onClick={() => this.setState({whichForm: 'b'})}>
+					GO BACK
+				</Button>
+			</div>
 		
 		let whichForm;
+		let goBack;
 		
 		if (this.state.whichForm === 'b') {
 			whichForm = buttons
+			goBack=null
 		} else if (this.state.whichForm === 'l') {
 			whichForm = login
+			goBack = goBackBtn
 		} else if (this.state.whichForm === 's') {
 			whichForm = signup
+			goBack = goBackBtn
 		}
  		
 		return (
 			<Grid id='open-page'>
 				{whichForm}
+				{goBack}
 			</Grid>
 		)
 	}

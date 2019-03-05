@@ -19,7 +19,7 @@ const MyPokemon = (props) => {
 
 
 	return(
-		<Segment.Group>
+		<Segment.Group id='left-container'>
 		
 			<Segment compact>
 				<h3 className="labels">{props.currentUser.name}'s Pokemon</h3>
@@ -27,38 +27,43 @@ const MyPokemon = (props) => {
 
 			<Segment compact id='myPokemon'>
 				<Button
-					inverted color='blue'
+					compact
+					inverted color='standard'
 					onClick={props.filterByRegion}
 					name='all'>
-					All Pokemon
+					ALL
 				</Button>
 
 				<Button
-					inverted color='blue'
+					compact
+					inverted color='standard'
 					onClick={props.filterByRegion}
 					name='kanto'>
-					Kanto
+					KANTO
 				</Button>
 
 				<Button
-					inverted color='blue'
+					compact
+					inverted color='standard'
 					onClick={props.filterByRegion}
 					name='johto'>
-					Johto
+					JOHTO
 				</Button>
 
 				<Button
-					inverted color='blue'
+					compact
+					inverted color='standard'
 					onClick={props.filterByRegion}
 					name='hoenn'>
-					Hoenn
+					HOENN
 				</Button>
 
 				<Button
-					inverted color='blue'
+					compact
+					inverted color='standard'
 					onClick={props.filterByRegion}
 					name='sinnoh'>
-					Sinnoh
+					SINNOH
 				</Button>
 
 				<br /> <br />

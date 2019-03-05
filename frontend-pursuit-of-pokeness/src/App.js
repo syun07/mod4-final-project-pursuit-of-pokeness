@@ -33,7 +33,6 @@ class App extends Component {
 			enterPage: false,
 			renderMe: 'profile',
 			currentUser: null,
-			currentUserId: null,
 			name: "",
 			password: "",
 			newName: "",
@@ -132,7 +131,6 @@ class App extends Component {
 			// if (login success), cool do normal thing, else, less cool, set things on fire
 			localStorage.setItem("token", payload.token)
 			this.setState({
-				currentUserId: payload.user.id,
 				enterPage: true
 			})
 			return fetch(`${UserApi}${payload.user.id.toString()}`)
