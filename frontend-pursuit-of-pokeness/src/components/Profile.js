@@ -17,11 +17,13 @@ class Profile extends React.Component {
 			
 				<div className='pokeCardContent'>
 					<div>
-						<h4 className="header">{name.toUpperCase()}</h4>
+						<h4 className="profile-text">{name.toUpperCase()}</h4>
 					</div>
+
+					<br />
 					
 					<div>
-						<p className="header"><strong># OF POKEMON:</strong> {pokemons.length}</p>
+						<p><strong># OF POKEMON:</strong> {pokemons.length}</p>
 					</div>
 				</div>
 			</Card>

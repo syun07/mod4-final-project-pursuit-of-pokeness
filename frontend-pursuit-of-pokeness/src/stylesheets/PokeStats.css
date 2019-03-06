@@ -16,15 +16,16 @@
 	padding-bottom: 2em;
 }
 
-ui.button {
-	margin-bottom: 3em;
-	font-family: 'Bangers', cursive;
-    font-size: 15px;
-    letter-spacing: 3px;
-}
+/* ui.button {
+	font-size: 18px;
+	letter-spacing: 4px;
+} */
 
 #choose-catch {
-	font-family: 'Bangers';
-	font-size: 15px;
-	letter-spacing: 3px;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.profile-text {
+	font-size: 24px;
 }

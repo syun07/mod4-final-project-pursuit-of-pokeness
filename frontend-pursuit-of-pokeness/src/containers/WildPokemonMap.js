@@ -19,7 +19,14 @@ const WildPokemonMap = (props) => {
                 id='refreshBtn'
                 color='orange'
                 onClick={props.renderRandomPoke}>
-                Refresh
+                REFRESH
+            </Button>
+
+            <Button
+                id='logout-btn'
+                inverted color='standard'
+                onClick={props.reloadPage}>
+                LOG OUT
             </Button>
 
         </Segment>       

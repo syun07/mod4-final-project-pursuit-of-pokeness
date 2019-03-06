@@ -5,15 +5,18 @@ import '../stylesheets/PokeStats.css'
 
 
 class PokeStats extends React.Component {
+
 	render() {
 	  
-		const {name, hp, front, region, kind } = this.props.selectedPoke
+		const { name, hp, front, region, kind } = this.props.selectedPoke
+		
 		return (
 			<Card className='pokeCard'>
 				<div>
 					
 					<div>
-						<img className='pokeCardImg' src={front} alt={name} />
+						<img className='pokeCardImg' src={front} alt={name} onClick={this.showButt} />
+						{}
 					</div>
 				
 					<div className='pokeCardContent'>
@@ -42,13 +45,14 @@ class PokeStats extends React.Component {
 								id='choose-catch'
 								color='green'
 								onClick={this.props.catchPoke}>
-								Catch
+								CATCH
 							</Button> 
 							:
 							<Button compact
+								id='choose-catch'
 								color='green'
 								onClick={() => this.props.makeMain(this.props.selectedPoke)}>
-								Choose Me!
+								CHOOSE ME
 							</Button> 
 						}
 						

@@ -7,8 +7,8 @@ import '../stylesheets/userConsole.css'
 const CatchSuccess = (props) => {
 	return (
 		<Card id='failcard'>
-			<h4>
-				{props.selectedPoke.name} fled!
+			<h4 id='fail-catch-text'>
+				{props.selectedPoke.name.toUpperCase()} FLED
 			</h4>
 		</Card>
 	)

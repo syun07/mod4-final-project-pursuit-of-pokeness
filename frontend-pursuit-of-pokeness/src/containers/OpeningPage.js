@@ -32,14 +32,14 @@ class OpeningPage extends Component {
 			<h1 id='title'>SIGN UP</h1>
 			<Form.Field>
 				<input
-					placeholder='NAME'
+					placeholder='USERNAME'
 					name='newName'
 					onChange={(event) => this.props.handleChange(event)} />
 			</Form.Field>
 			
 			<Form.Field>
 				<input
-					placeholder='PROFILE PICTURE'
+					placeholder='AVATAR'
 					name='newImage'
 					onChange={(event) => this.props.handleChange(event)} />
 			</Form.Field>

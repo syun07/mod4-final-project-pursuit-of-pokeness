@@ -128,14 +128,20 @@ class App extends Component {
 	handleLogin = event => {
 		event.preventDefault();
 		this.getAuthToken({ name: this.state.name, password: this.state.password }).then(payload => {
-			// if (login success), cool do normal thing, else, less cool, set things on fire
-			localStorage.setItem("token", payload.token)
-			this.setState({
-				enterPage: true
-			})
-			return fetch(`${UserApi}${payload.user.id.toString()}`)
+			if (payload.user) {
+				localStorage.setItem("token", payload.token)
+				this.setState({
+					enterPage: true
+				})
+				return fetch(`${UserApi}${payload.user.id.toString()}`).then(this.finishLogin)
+			} else {
+				alert("INVALID LOGIN!")
+			}
 		})
-		.then(res => res.json())
+	}
+
+	finishLogin = (res) => {
+		res.json()
 		.then(data => {
 			this.setState({
 				myPokemonList: data.pokemons,
@@ -146,7 +152,7 @@ class App extends Component {
 		})
 		this.renderRandomPoke()
 	}
-
+	
 	handleSignup = event => {
 		event.preventDefault();
 		return fetch(`${UserApi}`, {
@@ -231,6 +237,10 @@ class App extends Component {
 		event.target.name === 'all' ? this.setState({filteredPoke: this.state.myPokemonList}) : this.setState({filteredPoke: filtered})
 	}
 
+	reloadPage = () => {
+		window.location.reload()
+	}
+
 
 	render() {
 		return (
@@ -245,6 +255,7 @@ class App extends Component {
 					sinnohRand={this.state.sinnohRand}
 					renderRandomPoke={this.renderRandomPoke} 
 					selectWildPoke={this.selectWildPoke}
+					reloadPage={this.reloadPage}
 					/>
 				<UserConsole
 					selectedPoke={this.state.selectedPoke}
@@ -263,7 +274,7 @@ class App extends Component {
 
 			:
 
-			<Segment id='app'>
+			<Segment>
 				<OpeningPage
 					handleLogin={this.handleLogin}
 					handleSignup={this.handleSignup}

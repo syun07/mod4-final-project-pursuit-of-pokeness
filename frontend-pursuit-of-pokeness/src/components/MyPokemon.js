@@ -26,49 +26,50 @@ const MyPokemon = (props) => {
 			</Segment>
 
 			<Segment compact id='myPokemon'>
-				<Button
-					compact
-					inverted color='standard'
-					onClick={props.filterByRegion}
-					name='all'>
-					ALL
-				</Button>
+				<div id='button-box'>
 
-				<Button
-					compact
-					inverted color='standard'
-					onClick={props.filterByRegion}
-					name='kanto'>
-					KANTO
-				</Button>
+					<Button
+						compact
+						inverted color= 'orange'
+						onClick={props.filterByRegion}
+						name='all'>
+						ALL
+					</Button>
 
-				<Button
-					compact
-					inverted color='standard'
-					onClick={props.filterByRegion}
-					name='johto'>
-					JOHTO
-				</Button>
+					<Button
+						compact
+						inverted color='orange'
+						onClick={props.filterByRegion}
+						name='kanto'>
+						KANTO
+					</Button>
 
-				<Button
-					compact
-					inverted color='standard'
-					onClick={props.filterByRegion}
-					name='hoenn'>
-					HOENN
-				</Button>
+					<Button
+						compact
+						inverted color='orange'
+						onClick={props.filterByRegion}
+						name='johto'>
+						JOHTO
+					</Button>
 
-				<Button
-					compact
-					inverted color='standard'
-					onClick={props.filterByRegion}
-					name='sinnoh'>
-					SINNOH
-				</Button>
+					<Button
+						compact
+						inverted color='orange'
+						onClick={props.filterByRegion}
+						name='hoenn'>
+						HOENN
+					</Button>
 
-				<br /> <br />
+					<Button
+						compact
+						inverted color='orange'
+						onClick={props.filterByRegion}
+						name='sinnoh'>
+						SINNOH
+					</Button>
+				</div>
 
-				<Card.Group itemsPerRow={6}>
+				<Card.Group id='my-poke-box' itemsPerRow={5}>
 					{mapMyPoke}
 				</Card.Group>
 				

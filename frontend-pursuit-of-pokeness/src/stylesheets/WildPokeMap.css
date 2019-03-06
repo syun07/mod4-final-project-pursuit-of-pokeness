@@ -63,9 +63,16 @@
 
 #refreshBtn {
   position: absolute;
-  margin-left: 42em;
-  margin-top: 41em; 
-  font-family: 'Bangers';
-  font-size: 15px;
-  letter-spacing: 3px;
+  margin-left: 34em;
+  margin-top: 34em;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+#logout-btn {
+  position: absolute;
+  margin-left: 66em;
+  margin-top: 0em;
+  font-size: 18px;
+  letter-spacing: 4px;
 }

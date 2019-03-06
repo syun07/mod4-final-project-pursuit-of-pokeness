@@ -8,6 +8,9 @@ const CatchSuccess = (props) => {
 	return (
 		<Card id='successcard'>
 			<img id='caughtpoke' src={props.selectedPoke.front} alt={props.selectedPoke.name} />
+			<h4 id='fail-catch-text'>
+				YOU CAUGHT {props.selectedPoke.name.toUpperCase()}
+			</h4>
 		</Card>
 	)
 }

@@ -20,6 +20,16 @@
     overflow-y: scroll;
     white-space: pre-wrap;
   }
+
+  #button-box{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #my-poke-box {
+    width: 100%;
+    margin: auto;
+  }
   
   #magic {
     display: flex;
@@ -79,16 +89,21 @@
   }
 
   #catch-btn {
-    margin-right: 1em;
-    margin-top: 9em;
+    margin-right: 32px;
+    margin-top: 128px;
     position: absolute;
-    font-family: 'Bangers', cursive;
     font-size: 15px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
 
   #myPokemon * {
     font-size: 18px;
     letter-spacing: 3px;
-    width: fit-content;
+  }
+
+  #fail-catch-text {
+    position: absolute;
+    top: 85%;
+    font-size: 18px;
+    letter-spacing: 3px;
   }

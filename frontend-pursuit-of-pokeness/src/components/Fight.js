@@ -29,7 +29,7 @@ class Fight extends Component {
 							
 							<Grid.Column>
 								<div>
-									<Button id='catch-btn' inverted color='green' onClick={this.props.pokeFate}>
+									<Button id='catch-btn' color='green' onClick={this.props.pokeFate}>
 										CATCH {this.props.selectedPoke.name.toUpperCase()}
 									</Button>
 								</div>
