@@ -4,10 +4,10 @@
 
  #kanto {
   top: 375px;
-  left: 446px;
-   width: 430px;
-   padding: 10px;
-   height: 300px;
+  left: 348px;
+  width: 430px;
+  padding: 10px;
+  height: 300px;
  }  
 
 
@@ -20,8 +20,8 @@
  } 
 
  #hoenn {
-  top: 357px;
-  left: 936px;
+  top: 316px;
+  left: 963px;
   width: 430px;
   padding: 10px;
   height: 300px;
@@ -35,8 +35,17 @@
   height: 300px;
  } 
 
+ #rando {
+  top: 4px;
+  left: 820px;
+  width: 430px;
+  padding: 10px;
+  height: 300px;
+ }
+
 .pokeImg0 {
-  margin-bottom: 2em;
+  margin-bottom: 3px;
+  margin-left: 10px;
 }
 
 .pokeImg1 {
@@ -45,20 +54,27 @@
 }
 
 .pokeImg2 {
-  margin-left: 2em;
-  margin-bottom: 2em;
+  margin-left: 33px;
+  margin-bottom: 42px;
 }
 
 .pokeImg3 {
-  margin-left: 2em;
+  margin-left: 0em;
 } 
 
 .pokeImg4 {
   margin-left: 2em;
+  margin-bottom: 4em;
 }
 
 .pokeImg5 {
   margin-left: 2em;
+  margin-bottom: 52px;
+}
+
+.region img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
 }
 
 #refreshBtn {

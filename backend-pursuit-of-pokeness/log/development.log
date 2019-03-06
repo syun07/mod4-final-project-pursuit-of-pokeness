@@ -27370,3 +27370,929 @@ No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, re
 Completed 200 OK in 816ms (Views: 780.2ms | ActiveRecord: 26.5ms)
 
 
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 13:23:43 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (15.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (399.95ms)
+Completed 200 OK in 464ms (Views: 438.3ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 13:28:39 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (25.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (872.0ms)
+Completed 200 OK in 1041ms (Views: 1005.8ms | ActiveRecord: 25.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 13:30:33 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.34ms)
+Completed 202 Accepted in 119ms (Views: 12.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 13:30:33 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (166.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.89ms)
+Completed 200 OK in 224ms (Views: 7.5ms | ActiveRecord: 181.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 13:31:25 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (8.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (856.74ms)
+Completed 200 OK in 947ms (Views: 918.6ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 13:31:31 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.26ms)
+Completed 202 Accepted in 99ms (Views: 2.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 13:31:31 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (3.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.97ms)
+Completed 200 OK in 41ms (Views: 3.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 13:32:15 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (13.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (437.1ms)
+Completed 200 OK in 538ms (Views: 516.5ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 13:32:24 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"syun7", "password"=>"[FILTERED]", "auth"=>{"name"=>"syun7", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "syun7"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.73ms)
+Completed 202 Accepted in 94ms (Views: 3.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-03-06 13:32:24 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPokemon Load (18.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.32ms)
+Completed 200 OK in 33ms (Views: 2.0ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 13:35:46 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (7.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (1422.24ms)
+Completed 200 OK in 1505ms (Views: 1486.5ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 13:35:54 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"syun7", "password"=>"[FILTERED]", "auth"=>{"name"=>"syun7", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "syun7"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.36ms)
+Completed 202 Accepted in 127ms (Views: 6.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-03-06 13:35:54 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPokemon Load (8.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (24.45ms)
+Completed 200 OK in 88ms (Views: 26.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 13:49:07 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (8.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (799.25ms)
+Completed 200 OK in 1140ms (Views: 1124.9ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 13:49:17 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"sunny", "password"=>"[FILTERED]", "auth"=>{"name"=>"sunny", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "sunny"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.64ms)
+Completed 202 Accepted in 104ms (Views: 1.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2019-03-06 13:49:17 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (5.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.61ms)
+Completed 200 OK in 39ms (Views: 3.3ms | ActiveRecord: 22.1ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:50:11 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>174, "poke_user"=>{"user_id"=>4, "pokemon_id"=>174}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (26.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (21.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (12.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35mSQL (176.8ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 174], ["created_at", "2019-03-06 18:50:12.045418"], ["updated_at", "2019-03-06 18:50:12.045418"]]
+  [1m[35m (59.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (4.15ms)
+Completed 201 Created in 417ms (Views: 9.4ms | ActiveRecord: 296.7ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:50:22 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>181, "poke_user"=>{"user_id"=>4, "pokemon_id"=>181}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (3.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  [1m[35mSQL (25.3ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 181], ["created_at", "2019-03-06 18:50:22.605535"], ["updated_at", "2019-03-06 18:50:22.605535"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.57ms)
+Completed 201 Created in 58ms (Views: 1.7ms | ActiveRecord: 44.6ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:50:35 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>415, "poke_user"=>{"user_id"=>4, "pokemon_id"=>415}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (12.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 415], ["LIMIT", 1]]
+  [1m[35mSQL (5.4ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 415], ["created_at", "2019-03-06 18:50:35.693101"], ["updated_at", "2019-03-06 18:50:35.693101"]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.44ms)
+Completed 201 Created in 38ms (Views: 1.5ms | ActiveRecord: 25.9ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:51:27 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>49, "poke_user"=>{"user_id"=>4, "pokemon_id"=>49}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 49], ["created_at", "2019-03-06 18:51:27.566607"], ["updated_at", "2019-03-06 18:51:27.566607"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.58ms)
+Completed 201 Created in 20ms (Views: 1.5ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:51:50 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>482, "poke_user"=>{"user_id"=>4, "pokemon_id"=>482}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 482], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 482], ["created_at", "2019-03-06 18:51:50.398563"], ["updated_at", "2019-03-06 18:51:50.398563"]]
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.59ms)
+Completed 201 Created in 35ms (Views: 1.6ms | ActiveRecord: 24.3ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:52:07 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>2, "poke_user"=>{"user_id"=>4, "pokemon_id"=>2}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (23.6ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 2], ["created_at", "2019-03-06 18:52:07.234619"], ["updated_at", "2019-03-06 18:52:07.234619"]]
+  [1m[35m (43.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.67ms)
+Completed 201 Created in 81ms (Views: 2.1ms | ActiveRecord: 69.5ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:52:52 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>36, "poke_user"=>{"user_id"=>4, "pokemon_id"=>36}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35mSQL (51.3ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 36], ["created_at", "2019-03-06 18:52:52.073922"], ["updated_at", "2019-03-06 18:52:52.073922"]]
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.46ms)
+Completed 201 Created in 86ms (Views: 1.3ms | ActiveRecord: 77.0ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:53:35 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>317, "poke_user"=>{"user_id"=>4, "pokemon_id"=>317}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 317], ["created_at", "2019-03-06 18:53:35.868576"], ["updated_at", "2019-03-06 18:53:35.868576"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.52ms)
+Completed 201 Created in 26ms (Views: 1.4ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:54:03 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>387, "poke_user"=>{"user_id"=>4, "pokemon_id"=>387}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (2.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 387], ["LIMIT", 1]]
+  [1m[35mSQL (13.1ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 387], ["created_at", "2019-03-06 18:54:03.873243"], ["updated_at", "2019-03-06 18:54:03.873243"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.44ms)
+Completed 201 Created in 28ms (Views: 1.4ms | ActiveRecord: 16.9ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:54:15 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>469, "poke_user"=>{"user_id"=>4, "pokemon_id"=>469}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 469], ["LIMIT", 1]]
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 469], ["created_at", "2019-03-06 18:54:15.035058"], ["updated_at", "2019-03-06 18:54:15.035058"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.59ms)
+Completed 201 Created in 26ms (Views: 1.8ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:54:25 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>146, "poke_user"=>{"user_id"=>4, "pokemon_id"=>146}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (56.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  [1m[35mSQL (11.9ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 146], ["created_at", "2019-03-06 18:54:25.161735"], ["updated_at", "2019-03-06 18:54:25.161735"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.34ms)
+Completed 201 Created in 102ms (Views: 1.1ms | ActiveRecord: 90.0ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:54:37 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>386, "poke_user"=>{"user_id"=>4, "pokemon_id"=>386}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 386], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 386], ["created_at", "2019-03-06 18:54:37.886261"], ["updated_at", "2019-03-06 18:54:37.886261"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.61ms)
+Completed 201 Created in 24ms (Views: 1.6ms | ActiveRecord: 14.3ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:55:28 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>378, "poke_user"=>{"user_id"=>4, "pokemon_id"=>378}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 378], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 378], ["created_at", "2019-03-06 18:55:28.465929"], ["updated_at", "2019-03-06 18:55:28.465929"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.54ms)
+Completed 201 Created in 19ms (Views: 1.5ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:56:52 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>423, "poke_user"=>{"user_id"=>4, "pokemon_id"=>423}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 423], ["LIMIT", 1]]
+  [1m[35mSQL (11.4ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 423], ["created_at", "2019-03-06 18:56:52.548868"], ["updated_at", "2019-03-06 18:56:52.548868"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.48ms)
+Completed 201 Created in 28ms (Views: 1.9ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 13:57:14 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>475, "poke_user"=>{"user_id"=>4, "pokemon_id"=>475}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 475], ["LIMIT", 1]]
+  [1m[35mSQL (12.4ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 475], ["created_at", "2019-03-06 18:57:14.975071"], ["updated_at", "2019-03-06 18:57:14.975071"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.41ms)
+Completed 201 Created in 26ms (Views: 1.3ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:01:10 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>274, "poke_user"=>{"user_id"=>4, "pokemon_id"=>274}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (1.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 274], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 274], ["created_at", "2019-03-06 19:01:10.990158"], ["updated_at", "2019-03-06 19:01:10.990158"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (3.84ms)
+Completed 201 Created in 137ms (Views: 9.2ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:01:37 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>474, "poke_user"=>{"user_id"=>4, "pokemon_id"=>474}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 474], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 474], ["created_at", "2019-03-06 19:01:37.570720"], ["updated_at", "2019-03-06 19:01:37.570720"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.57ms)
+Completed 201 Created in 25ms (Views: 1.6ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:01:52 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>249, "poke_user"=>{"user_id"=>4, "pokemon_id"=>249}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 249], ["LIMIT", 1]]
+  [1m[35mSQL (21.3ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 249], ["created_at", "2019-03-06 19:01:52.028482"], ["updated_at", "2019-03-06 19:01:52.028482"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.46ms)
+Completed 201 Created in 45ms (Views: 1.4ms | ActiveRecord: 28.0ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:02:14 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>257, "poke_user"=>{"user_id"=>4, "pokemon_id"=>257}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 257], ["LIMIT", 1]]
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 257], ["created_at", "2019-03-06 19:02:14.882210"], ["updated_at", "2019-03-06 19:02:14.882210"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.39ms)
+Completed 201 Created in 25ms (Views: 1.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:02:23 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (10.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (424.46ms)
+Completed 200 OK in 502ms (Views: 489.6ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:02:41 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.1ms)
+Completed 202 Accepted in 96ms (Views: 1.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:02:41 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (18.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.7ms)
+Completed 200 OK in 64ms (Views: 14.9ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:15:57 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (24.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (772.47ms)
+Completed 200 OK in 1107ms (Views: 1070.8ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:17:44 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (5.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (525.76ms)
+Completed 200 OK in 596ms (Views: 583.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:18:13 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (26.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (804.63ms)
+Completed 200 OK in 947ms (Views: 910.8ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:18:19 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (13.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (153.17ms)
+Completed 200 OK in 177ms (Views: 163.6ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:18:28 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (82.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (474.15ms)
+Completed 200 OK in 612ms (Views: 529.0ms | ActiveRecord: 82.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:18:35 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.25ms)
+Completed 202 Accepted in 101ms (Views: 3.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:18:35 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (27.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.47ms)
+Completed 200 OK in 60ms (Views: 2.9ms | ActiveRecord: 32.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:19:09 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (6.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (821.42ms)
+Completed 200 OK in 896ms (Views: 877.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:21:42 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (5.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (850.1ms)
+Completed 200 OK in 928ms (Views: 911.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:22:05 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (11.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (166.05ms)
+Completed 200 OK in 209ms (Views: 188.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:22:32 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (5.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (475.09ms)
+Completed 200 OK in 583ms (Views: 565.0ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:22:39 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.55ms)
+Completed 202 Accepted in 97ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:22:40 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (18.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (4.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.43ms)
+Completed 200 OK in 57ms (Views: 8.6ms | ActiveRecord: 22.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:28:16 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (53.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (423.26ms)
+Completed 200 OK in 582ms (Views: 516.3ms | ActiveRecord: 53.8ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:28:20 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (4.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (188.43ms)
+Completed 200 OK in 205ms (Views: 199.4ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:28:25 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.49ms)
+Completed 202 Accepted in 200ms (Views: 1.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:28:26 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.83ms)
+Completed 200 OK in 31ms (Views: 7.0ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:29:46 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (7.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (96.18ms)
+Completed 200 OK in 563ms (Views: 547.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:30:10 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (4.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (360.41ms)
+Completed 200 OK in 379ms (Views: 373.8ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:30:15 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 202 Accepted in 86ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:30:15 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (7.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.18ms)
+Completed 200 OK in 29ms (Views: 6.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:31:10 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (10.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (488.13ms)
+Completed 200 OK in 590ms (Views: 571.7ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:31:15 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.7ms)
+Completed 202 Accepted in 86ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:31:16 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (7.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.31ms)
+Completed 200 OK in 36ms (Views: 7.1ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:32:18 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (9.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (385.41ms)
+Completed 200 OK in 419ms (Views: 408.5ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:32:24 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.51ms)
+Completed 202 Accepted in 100ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:32:24 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (4.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.93ms)
+Completed 200 OK in 33ms (Views: 7.8ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:36:01 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (92.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (1171.06ms)
+Completed 200 OK in 1440ms (Views: 1334.8ms | ActiveRecord: 92.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:36:06 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (3.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (349.47ms)
+Completed 200 OK in 367ms (Views: 363.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:36:11 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.62ms)
+Completed 202 Accepted in 90ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:36:11 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.29ms)
+Completed 200 OK in 29ms (Views: 8.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:36:38 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (9.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (404.38ms)
+Completed 200 OK in 469ms (Views: 451.9ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:36:42 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (2.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (212.87ms)
+Completed 200 OK in 230ms (Views: 226.7ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:36:48 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 202 Accepted in 89ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:36:48 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (18.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.76ms)
+Completed 200 OK in 40ms (Views: 6.5ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:37:05 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (18.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (225.6ms)
+Completed 200 OK in 258ms (Views: 239.3ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:37:15 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 202 Accepted in 86ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:37:15 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (8.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.77ms)
+Completed 200 OK in 31ms (Views: 6.7ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:38:29 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (4.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (434.12ms)
+Completed 200 OK in 477ms (Views: 471.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:38:37 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.82ms)
+Completed 202 Accepted in 91ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:38:38 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.96ms)
+Completed 200 OK in 26ms (Views: 5.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:39:53 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (9.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (273.06ms)
+Completed 200 OK in 308ms (Views: 297.8ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:40:06 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"vanessa", "password"=>"[FILTERED]", "auth"=>{"name"=>"vanessa", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "vanessa"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.75ms)
+Completed 202 Accepted in 99ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-06 14:40:06 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (20.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.14ms)
+Completed 200 OK in 40ms (Views: 4.3ms | ActiveRecord: 21.8ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:40:15 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>1, "pokemon_id"=>91, "poke_user"=>{"user_id"=>1, "pokemon_id"=>91}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (6.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  [1m[35mSQL (69.4ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["pokemon_id", 91], ["created_at", "2019-03-06 19:40:15.942627"], ["updated_at", "2019-03-06 19:40:15.942627"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (2.03ms)
+Completed 201 Created in 105ms (Views: 2.9ms | ActiveRecord: 84.5ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:40:32 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>1, "pokemon_id"=>60, "poke_user"=>{"user_id"=>1, "pokemon_id"=>60}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (7.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["pokemon_id", 60], ["created_at", "2019-03-06 19:40:32.659121"], ["updated_at", "2019-03-06 19:40:32.659121"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.44ms)
+Completed 201 Created in 36ms (Views: 1.1ms | ActiveRecord: 28.9ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:40:43 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>1, "pokemon_id"=>205, "poke_user"=>{"user_id"=>1, "pokemon_id"=>205}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  [1m[35mSQL (16.3ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["pokemon_id", 205], ["created_at", "2019-03-06 19:40:43.508528"], ["updated_at", "2019-03-06 19:40:43.508528"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.41ms)
+Completed 201 Created in 29ms (Views: 1.1ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:40:53 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (11.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (317.84ms)
+Completed 200 OK in 368ms (Views: 355.8ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-06 14:42:17 -0500
+Processing by AuthController#create as */*
+  Parameters: {"name"=>"sunny", "password"=>"[FILTERED]", "auth"=>{"name"=>"sunny", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "sunny"], ["LIMIT", 1]]
+Unpermitted parameter: :auth
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.69ms)
+Completed 202 Accepted in 111ms (Views: 5.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2019-03-06 14:42:17 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (7.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" INNER JOIN "poke_users" ON "pokemons"."id" = "poke_users"."pokemon_id" WHERE "poke_users"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.97ms)
+Completed 200 OK in 33ms (Views: 4.4ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:42:40 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>137, "poke_user"=>{"user_id"=>4, "pokemon_id"=>137}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 137], ["created_at", "2019-03-06 19:42:40.946275"], ["updated_at", "2019-03-06 19:42:40.946275"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (1.16ms)
+Completed 201 Created in 27ms (Views: 2.8ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/poke_users/" for 127.0.0.1 at 2019-03-06 14:43:43 -0500
+Processing by PokeUsersController#create as JSON
+  Parameters: {"user_id"=>4, "pokemon_id"=>212, "poke_user"=>{"user_id"=>4, "pokemon_id"=>212}}
+Unpermitted parameter: :poke_user
+Unpermitted parameter: :poke_user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 212], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "poke_users" ("user_id", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pokemon_id", 212], ["created_at", "2019-03-06 19:43:43.786193"], ["updated_at", "2019-03-06 19:43:43.786193"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PokeUser (0.55ms)
+Completed 201 Created in 19ms (Views: 2.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2019-03-06 14:45:07 -0500
+Processing by PokemonsController#index as */*
+  [1m[36mPokemon Load (6.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+No serializer found for resource: #<Pokemon id: 1, name: "bulbasaur", hp: 45, region: "kanto", front: "https://raw.githubusercontent.com/PokeAPI/sprites/...", back: "https://raw.githubusercontent.com/PokeAPI/sprites/...", created_at: "2019-03-05 22:42:25", updated_at: "2019-03-05 22:42:25", kind: "poison">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Pokemon::ActiveRecord_Relation (606.25ms)
+Completed 200 OK in 639ms (Views: 631.9ms | ActiveRecord: 6.1ms)
+
+

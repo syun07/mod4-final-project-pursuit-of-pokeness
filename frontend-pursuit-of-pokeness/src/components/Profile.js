@@ -23,7 +23,7 @@ class Profile extends React.Component {
 					<br />
 					
 					<div>
-						<p><strong># OF POKEMON:</strong> {pokemons.length}</p>
+						<p><strong># OF POKEMON: {pokemons.length}</strong> </p>
 					</div>
 				</div>
 			</Card>

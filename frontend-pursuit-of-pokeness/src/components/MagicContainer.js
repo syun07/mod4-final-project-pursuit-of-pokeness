@@ -60,11 +60,28 @@ class MagicContainer extends Component {
 		} else if (this.props.renderMe === 'choose') {
 			renderMe = choose
 		}
+
+		let renderTitle
+
+		if (this.props.renderMe === 'profile') {
+			renderTitle = 'profile' 
+		} else if (this.props.renderMe === 'stats') {
+			renderTitle = 'pokemon information' 
+		} else if (this.props.renderMe === 'fight') {
+			renderTitle = 'good luck!'
+		} else if (this.props.renderMe === 'success') {
+			renderTitle = 'yay!'
+		} else if (this.props.renderMe === 'fail') {
+			renderTitle = 'oh no!'
+		} else if (this.props.renderMe === 'choose') {
+			renderTitle = 'good choice!'
+		}
+
 	
 		return (
 			<Segment.Group className="magicCont">
 				<Segment compact >
-					<h3 className="labels">Magic Container</h3>
+					<h3 className="labels">{renderTitle}</h3>
 				</Segment>
 				
 				<Segment id='magic'>

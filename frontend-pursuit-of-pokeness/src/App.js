@@ -22,10 +22,12 @@ class App extends Component {
 			johto: [],
 			hoenn: [],
 			sinnoh: [],
+			allPokemon: [],
 			kantoRand: [],
 			johtoRand: [],
 			hoennRand: [],
 			sinnohRand: [],
+			randoRand: [],
 			myPokemonList: [],
 			filteredPoke: [],
 			selectedPoke: null,
@@ -56,7 +58,8 @@ class App extends Component {
 					kanto: k,
 					johto: j,
 					sinnoh: s,
-					hoenn: h
+					hoenn: h,
+					allPokemon: [...k, ...j, ...s, ...h]
 				})
 			})
 	}
@@ -108,11 +111,24 @@ class App extends Component {
 			newSinnoh.push(this.state.sinnoh.find(poke => poke.id === num))
 		)
 
+		// RANDO //
+		let randoNums = []
+		for (let p = 1; p < 7; p++) {
+			randoNums.push(Math.floor((Math.random() * 490) + 1))
+		}
+		
+		let newRando = []
+		randoNums.map(num =>
+			newRando.push(this.state.allPokemon.find(poke => poke.id === num))
+		)
+
 		this.setState({
 			kantoRand: newKanto,
 			johtoRand: newJohto,
 			hoennRand: newHoenn,
-			sinnohRand: newSinnoh
+			sinnohRand: newSinnoh,
+			randoRand: newRando,
+			renderMe: 'profile'
 		})
 
 	}
@@ -211,19 +227,19 @@ class App extends Component {
 
 	pokeFate = () => {
 		let fate = Math.floor((Math.random() * 10) + 1)
-		if (fate <= 6) {
+		if (fate <= 4) {
+			this.renderRandomPoke()
 			this.setState({
 				renderMe: 'success',
 				myPokemonList: [...this.state.myPokemonList, this.state.selectedPoke],
 				filteredPoke: [...this.state.filteredPoke, this.state.selectedPoke]
 			})
-			this.renderRandomPoke()
 			this.postPoke()
 		} else {
-			this.setState({
-				renderMe: 'fail',
-			})
 			this.renderRandomPoke()
+			this.setState({
+				renderMe: 'fail'
+			})
 		}
 	} 
 
@@ -263,6 +279,7 @@ class App extends Component {
 					johtoRand={this.state.johtoRand}
 					hoennRand={this.state.hoennRand}
 					sinnohRand={this.state.sinnohRand}
+					randoRand={this.state.randoRand}
 					renderRandomPoke={this.renderRandomPoke}
 					selectWildPoke={this.selectWildPoke}
 					reloadPage={this.reloadPage}

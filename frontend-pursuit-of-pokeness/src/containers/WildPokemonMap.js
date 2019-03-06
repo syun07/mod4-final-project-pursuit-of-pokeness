@@ -13,7 +13,8 @@ const WildPokemonMap = (props) => {
             <Region rand={props.kantoRand} name='kanto' selectWildPoke={props.selectWildPoke}/>
             <Region rand={props.johtoRand} name='johto' selectWildPoke={props.selectWildPoke}/>
             <Region rand={props.hoennRand} name='hoenn' selectWildPoke={props.selectWildPoke}/>
-            <Region rand={props.sinnohRand} name='sinnoh' selectWildPoke={props.selectWildPoke}/>
+            <Region rand={props.sinnohRand} name='sinnoh' selectWildPoke={props.selectWildPoke} />
+            <Region rand={props.randoRand} name='rando' selectWildPoke={props.selectWildPoke}/>
 
             <Button
                 id='refreshBtn'
@@ -24,7 +25,7 @@ const WildPokemonMap = (props) => {
 
             <Button
                 id='logout-btn'
-                inverted color='standard'
+                inverted
                 onClick={props.reloadPage}>
                 LOG OUT
             </Button>

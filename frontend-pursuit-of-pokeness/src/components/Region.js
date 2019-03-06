@@ -9,7 +9,8 @@ const Region = (props) => {
 			src={poke.front}
 			className={`pokeImg${index}`}
 			alt={poke.name}
-			onClick={() => props.selectWildPoke(poke)}>
+			onClick={() => props.selectWildPoke(poke)}
+			>
 		</img>) 
 
 	return(
