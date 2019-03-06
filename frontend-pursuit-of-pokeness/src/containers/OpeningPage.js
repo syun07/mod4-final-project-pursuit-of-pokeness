@@ -97,7 +97,7 @@ class OpeningPage extends Component {
 				<br />
 				<Button
 					id='login-btn'
-					inverted color='standard'
+					inverted
 					onClick={() => this.setState({whichForm: 'l'})}>
 					LOGIN
 				</Button>
@@ -114,7 +114,7 @@ class OpeningPage extends Component {
 			<div>
 				<Button
 					id='back-btn'
-					inverted color='standard'
+					inverted
 					onClick={() => this.setState({whichForm: 'b'})}>
 					GO BACK
 				</Button>

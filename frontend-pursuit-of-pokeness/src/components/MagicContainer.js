@@ -4,6 +4,7 @@ import PokeStats from './PokeStats'
 import Fight from './Fight'
 import CatchSuccess from './CatchSuccess'
 import CatchFail from './CatchFail'
+import ChoosePoke from './ChoosePoke'
 
 import { Segment } from 'semantic-ui-react'
 
@@ -38,6 +39,11 @@ class MagicContainer extends Component {
 			<CatchFail
 				selectedPoke={this.props.selectedPoke} 
 			/>
+		
+		const choose = 
+			<ChoosePoke 
+				mainPoke={this.props.mainPoke}
+			/>
 
 		let renderMe
 
@@ -51,6 +57,8 @@ class MagicContainer extends Component {
 			renderMe = success
 		} else if (this.props.renderMe === 'fail') {
 			renderMe = fail
+		} else if (this.props.renderMe === 'choose') {
+			renderMe = choose
 		}
 	
 		return (

@@ -16,11 +16,6 @@
 	padding-bottom: 2em;
 }
 
-/* ui.button {
-	font-size: 18px;
-	letter-spacing: 4px;
-} */
-
 #choose-catch {
 	font-size: 18px;
 	letter-spacing: 2px;
@@ -28,4 +23,9 @@
 
 .profile-text {
 	font-size: 24px;
+}
+
+#choose-card {
+	background-image: url('../images/chosen.gif');
+    background-size: 100%;
 }

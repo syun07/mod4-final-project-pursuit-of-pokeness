@@ -15,8 +15,7 @@ class PokeStats extends React.Component {
 				<div>
 					
 					<div>
-						<img className='pokeCardImg' src={front} alt={name} onClick={this.showButt} />
-						{}
+						<img className='pokeCardImg' src={front} alt={name} />
 					</div>
 				
 					<div className='pokeCardContent'>

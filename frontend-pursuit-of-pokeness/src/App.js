@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import WildPokemonMap from './containers/WildPokemonMap'
 import UserConsole from './containers/UserConsole'
 import OpeningPage from './containers/OpeningPage'
+import LoadingPika from './containers/LoadingPika'
 
 
 import { Segment } from 'semantic-ui-react';
@@ -30,14 +31,15 @@ class App extends Component {
 			selectedPoke: null,
 			mainPoke: null,
 			wild: null,
-			enterPage: false,
+			enterPage: 'o',
 			renderMe: 'profile',
 			currentUser: null,
 			name: "",
 			password: "",
 			newName: "",
 			newPassword: "",
-			newImage: ""
+			newImage: "",
+			load: false
 		}
 	}
 
@@ -131,7 +133,7 @@ class App extends Component {
 			if (payload.user) {
 				localStorage.setItem("token", payload.token)
 				this.setState({
-					enterPage: true
+					enterPage: 'p'
 				})
 				return fetch(`${UserApi}${payload.user.id.toString()}`).then(this.finishLogin)
 			} else {
@@ -143,12 +145,15 @@ class App extends Component {
 	finishLogin = (res) => {
 		res.json()
 		.then(data => {
-			this.setState({
-				myPokemonList: data.pokemons,
-				filteredPoke: data.pokemons,
-				mainPoke: data.pokemons[0],
-				currentUser: data
-			})
+			setTimeout(() => {
+				this.setState({
+					myPokemonList: data.pokemons,
+					filteredPoke: data.pokemons,
+					mainPoke: data.pokemons[0],
+					currentUser: data,
+					enterPage: 'a'
+				})
+			}, 3000)
 		})
 		this.renderRandomPoke()
 	}
@@ -191,7 +196,9 @@ class App extends Component {
 	}
 
 	makeMain = (poke) => {
+
 		this.setState({
+			renderMe: 'choose',
 			mainPoke: poke
 		})
 	}
@@ -241,22 +248,25 @@ class App extends Component {
 		window.location.reload()
 	}
 
+	loadPika = () => {
 
+	}
+
+	
 	render() {
-		return (
-			// if user logs in (clicks submit), render map & user console- otherwise render opening page
-			this.state.enterPage ?
-				
+		const pika = <Segment id="app"> <LoadingPika /> </Segment>
+
+		const application =
 			<Segment id="app">
 				<WildPokemonMap
 					kantoRand={this.state.kantoRand}
 					johtoRand={this.state.johtoRand}
 					hoennRand={this.state.hoennRand}
 					sinnohRand={this.state.sinnohRand}
-					renderRandomPoke={this.renderRandomPoke} 
+					renderRandomPoke={this.renderRandomPoke}
 					selectWildPoke={this.selectWildPoke}
 					reloadPage={this.reloadPage}
-					/>
+				/>
 				<UserConsole
 					selectedPoke={this.state.selectedPoke}
 					mainPoke={this.state.mainPoke}
@@ -269,11 +279,10 @@ class App extends Component {
 					currentUser={this.state.currentUser}
 					filterByRegion={this.filterByRegion}
 					filteredPoke={this.state.filteredPoke}
-					/> 
+				/>
 			</Segment>
-
-			:
-
+			
+		const opening = 
 			<Segment>
 				<OpeningPage
 					handleLogin={this.handleLogin}
@@ -281,7 +290,20 @@ class App extends Component {
 					handleChange={this.handleChange} 
 					/>
 			</Segment>
-			
+		
+		let showMe 
+		if (this.state.enterPage === 'o') {
+			showMe = opening 
+		} else if (this.state.enterPage === 'a') {
+			showMe = application
+		} else if (this.state.enterPage === 'p') {
+			showMe = pika
+		}
+
+		return (
+			<div>
+				{showMe}
+			</div>
 		);
 	}
 }

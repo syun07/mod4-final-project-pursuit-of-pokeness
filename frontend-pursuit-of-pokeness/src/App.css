@@ -99,3 +99,12 @@ input {
   letter-spacing: 4px;
 }
 
+#loading-page {
+  background-image: url(./images/pika.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  margin-top: 21em;
+}
+
