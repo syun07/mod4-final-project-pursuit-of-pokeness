@@ -1,13 +1,12 @@
-import React from 'react'
-
-import { Card } from 'semantic-ui-react'
-import '../stylesheets/PokeStats.css'
+import React from 'react';
+import { Card } from 'semantic-ui-react';
+import '../stylesheets/PokeStats.css';
 
 const ChoosePoke = (props) => {
 	return (
 		<Card id='choose-card' className='pokeCard'>
 			<div>
-				<img className='pokeCardImg' src={props.mainPoke.front} alt={props.mainPoke.name} />
+				<img className='pokeCardImg' src={props.mainPoke.front} alt='' />
 			</div>
 
 			<div className='pokeCardContent'>
@@ -19,4 +18,4 @@ const ChoosePoke = (props) => {
 	)
 }
 
-export default ChoosePoke
+export default ChoosePoke;

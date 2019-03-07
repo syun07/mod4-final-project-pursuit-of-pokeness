@@ -1,8 +1,6 @@
-import React from 'react'
-
-import { Card } from 'semantic-ui-react'
-import '../stylesheets/userConsole.css'
-
+import React from 'react';
+import { Card } from 'semantic-ui-react';
+import '../stylesheets/userConsole.css';
 
 const CatchSuccess = (props) => {
 	return (
@@ -14,4 +12,4 @@ const CatchSuccess = (props) => {
 	)
 }
 
-export default CatchSuccess
+export default CatchSuccess;

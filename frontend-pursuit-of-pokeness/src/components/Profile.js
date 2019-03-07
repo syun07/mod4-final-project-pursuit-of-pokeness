@@ -1,33 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { Card } from 'semantic-ui-react';
+import '../stylesheets/PokeStats.css';
 
-import { Card } from 'semantic-ui-react'
-import '../stylesheets/PokeStats.css'
-
-
-class Profile extends React.Component {
-	render() {
-
-		const { name, image, pokemons } = this.props.currentUser	  
+const Profile = (props) => {
+	const { name, image, pokemons } = props.currentUser	  
+	
+	return (
+		<Card className='pokeCard'>
+			<div>
+				<img className='pokeCardImg' src={image} alt='' />
+			</div>
 		
-		return (
-			<Card className='pokeCard'>
+			<div className='pokeCardContent'>
 				<div>
-					<img className='pokeCardImg' src={image} alt={name} />
+					<h4 className="profile-text">{name.toUpperCase()}</h4>
 				</div>
-			
-				<div className='pokeCardContent'>
-					<div>
-						<h4 className="profile-text">{name.toUpperCase()}</h4>
-					</div>
-
-					<br />
-					
-					<div>
-						<p><strong># OF POKEMON: {pokemons.length}</strong> </p>
-					</div>
+				
+				<br />
+				
+				<div>
+					<p><strong># OF POKEMON: {pokemons.length}</strong></p>
 				</div>
-			</Card>
-		)
-	}
+			</div>
+		</Card>
+	)
 }
-export default Profile
+
+export default Profile;

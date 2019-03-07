@@ -86,7 +86,6 @@ input {
 }
 
 #login-btn, #signup-btn {
-  /* font-family: 'Bangers'; */
   font-size: 24px;
   letter-spacing: 5px;
   margin-left: 2em;
@@ -107,4 +106,3 @@ input {
   height: 200px;
   margin-top: 21em;
 }
-

@@ -9,106 +9,106 @@
 }
 
 .magicCont {
-    min-height: 500px;
-    margin: 2px;
-    padding: 2px;
-    align-items: center;
-  }
+	min-height: 500px;
+	margin: 2px;
+	padding: 2px;
+	align-items: center;
+}
 
-  #myPokemon {
-    height: 500px;
-    overflow-y: scroll;
-    white-space: pre-wrap;
-  }
+#myPokemon {
+	height: 500px;
+	overflow-y: scroll;
+	white-space: pre-wrap;
+}
 
-  #button-box{
-    display: flex;
-    justify-content: space-between;
-  }
+#button-box{
+	display: flex;
+	justify-content: space-between;
+}
 
-  #my-poke-box {
-    width: 100%;
-    margin: auto;
-  }
+#my-poke-box {
+	width: 100%;
+	margin: auto;
+}
 
-  #my-poke-box img:hover {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1)
-  }
-  
-  #magic {
-    display: flex;
-    height: 500px;
-    justify-content: center;
-    align-items: center;
-  }
+#my-poke-box img:hover {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1)
+}
 
-  .labels {
-    font-family: 'Bangers', cursive;
-    font-size: 32px;
-    letter-spacing: 6px;
-    color: #3d99b2;
-    padding: 5px;
-    justify-content:center;
-    text-align: center;
-  }
+#magic {
+	display: flex;
+	height: 500px;
+	justify-content: center;
+	align-items: center;
+}
 
-  #fightcard {
-    background-image: url('../images/sparkles.gif');
-    background-size: 100%;
-    position: relative;
-  }
+.labels {
+	font-family: 'Bangers', cursive;
+	font-size: 32px;
+	letter-spacing: 6px;
+	color: #3d99b2;
+	padding: 5px;
+	justify-content:center;
+	text-align: center;
+}
 
-  #fightgrid {
-    height: 450px;
-    width: 450px;
-  }
+#fightcard {
+	background-image: url('../images/sparkles.gif');
+	background-size: 100%;
+	position: relative;
+}
 
-   #successcard {
-    background-image: url('../images/heart.gif');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 450px;
-    width: 450px;
-  }
+#fightgrid {
+	height: 450px;
+	width: 450px;
+}
 
-  #caughtpoke {
-    width: 250px;
-	  height: 250px;
-  }
+#successcard {
+	background-image: url('../images/heart.gif');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 450px;
+	width: 450px;
+}
 
-  #failcard {
-    background-image: url('../images/cloud.gif');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 450px;
-    width: 450px;
-  }
+#caughtpoke {
+	width: 250px;
+	height: 250px;
+}
 
-  #catch-btn {
-    margin-right: 32px;
-    margin-top: 128px;
-    position: absolute;
-    font-size: 15px;
-    letter-spacing: 2px;
-  }
+#failcard {
+	background-image: url('../images/cloud.gif');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 450px;
+	width: 450px;
+}
 
-  #myPokemon * {
-    font-size: 18px;
-    letter-spacing: 3px;
-  }
+#catch-btn {
+	margin-right: 32px;
+	margin-top: 128px;
+	position: absolute;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
 
-  #fail-catch-text {
-    position: absolute;
-    top: 85%;
-    font-size: 18px;
-    letter-spacing: 3px;
-  } 
+#myPokemon * {
+	font-size: 18px;
+	letter-spacing: 3px;
+}
+
+#fail-catch-text {
+	position: absolute;
+	top: 85%;
+	font-size: 18px;
+	letter-spacing: 3px;
+} 

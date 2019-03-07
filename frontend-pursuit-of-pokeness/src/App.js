@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import WildPokemonMap from './containers/WildPokemonMap'
-import UserConsole from './containers/UserConsole'
-import OpeningPage from './containers/OpeningPage'
-import LoadingPika from './containers/LoadingPika'
-
-
+import WildPokemonMap from './containers/WildPokemonMap';
+import UserConsole from './containers/UserConsole';
+import OpeningPage from './containers/OpeningPage';
+import LoadingPika from './containers/LoadingPika';
 import { Segment } from 'semantic-ui-react';
 import './App.css';
 
-const loginApi = 'http://localhost:3000/login'
-const PokeApi = 'http://localhost:3000/pokemons'
-const UserApi = 'http://localhost:3000/users/'
-const PokeUserApi = 'http://localhost:3000/poke_users/'
+const API = 'http://localhost:3000';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 
 		this.state = {
 			kanto: [],
@@ -46,22 +41,22 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch(PokeApi)
-			.then(res => res.json())
-			.then(data => {
-				let k = data.filter(poke => poke.region === 'kanto')
-				let j = data.filter(poke => poke.region === 'johto')
-				let s = data.filter(poke => poke.region === 'sinnoh')
-				let h = data.filter(poke => poke.region === 'hoenn')
+		fetch(`${API}/pokemons`)
+		.then(res => res.json())
+		.then(data => {
+			let k = data.filter(poke => poke.region === 'kanto')
+			let j = data.filter(poke => poke.region === 'johto')
+			let s = data.filter(poke => poke.region === 'sinnoh')
+			let h = data.filter(poke => poke.region === 'hoenn')
 
-				this.setState({
-					kanto: k,
-					johto: j,
-					sinnoh: s,
-					hoenn: h,
-					allPokemon: [...k, ...j, ...s, ...h]
-				})
+			this.setState({
+				kanto: k,
+				johto: j,
+				sinnoh: s,
+				hoenn: h,
+				allPokemon: [...k, ...j, ...s, ...h]
 			})
+		})
 	}
 
 
@@ -130,17 +125,6 @@ class App extends Component {
 			randoRand: newRando,
 			renderMe: 'profile'
 		})
-
-	}
-
-	getAuthToken(loginInfo) {
-		return fetch(`${loginApi}`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(loginInfo)
-		}).then(res => res.json())
 	}
 	
 	handleLogin = event => {
@@ -151,11 +135,21 @@ class App extends Component {
 				this.setState({
 					enterPage: 'p'
 				})
-				return fetch(`${UserApi}${payload.user.id.toString()}`).then(this.finishLogin)
+				return fetch(`${API}/users/${payload.user.id.toString()}`).then(this.finishLogin)
 			} else {
 				alert("INVALID LOGIN!")
 			}
 		})
+	}
+
+	getAuthToken(loginInfo) {
+		return fetch(`${API}/login`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(loginInfo)
+		}).then(res => res.json())
 	}
 
 	finishLogin = (res) => {
@@ -174,9 +168,15 @@ class App extends Component {
 		this.renderRandomPoke()
 	}
 	
+	handleChange = event => {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+
 	handleSignup = event => {
 		event.preventDefault();
-		return fetch(`${UserApi}`, {
+		return fetch(`${API}/users`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -187,12 +187,6 @@ class App extends Component {
 				image: this.state.newImage
 			})
 		}).then(res => res.json())
-	}
-
-	handleChange = event => {
-		this.setState({
-			[event.target.name]: event.target.value
-		})
 	}
 
 	selectWildPoke = (poke) => {
@@ -212,7 +206,6 @@ class App extends Component {
 	}
 
 	makeMain = (poke) => {
-
 		this.setState({
 			renderMe: 'choose',
 			mainPoke: poke
@@ -232,7 +225,7 @@ class App extends Component {
 			this.setState({
 				renderMe: 'success',
 				myPokemonList: [...this.state.myPokemonList, this.state.selectedPoke],
-				filteredPoke: [...this.state.filteredPoke, this.state.selectedPoke]
+				filteredPoke: [...this.state.myPokemonList, this.state.selectedPoke]
 			})
 			this.postPoke()
 		} else {
@@ -245,7 +238,7 @@ class App extends Component {
 
 	postPoke = () => {
 		let userpoke = {user_id: this.state.currentUser.id, pokemon_id: this.state.selectedPoke.id}
-		fetch(PokeUserApi, {
+		fetch(`${API}/poke_users`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -264,11 +257,6 @@ class App extends Component {
 		window.location.reload()
 	}
 
-	loadPika = () => {
-
-	}
-
-	
 	render() {
 		const pika = <Segment id="app"> <LoadingPika /> </Segment>
 
@@ -282,8 +270,7 @@ class App extends Component {
 					randoRand={this.state.randoRand}
 					renderRandomPoke={this.renderRandomPoke}
 					selectWildPoke={this.selectWildPoke}
-					reloadPage={this.reloadPage}
-				/>
+					reloadPage={this.reloadPage} />
 				<UserConsole
 					selectedPoke={this.state.selectedPoke}
 					mainPoke={this.state.mainPoke}
@@ -295,8 +282,7 @@ class App extends Component {
 					pokeFate={this.pokeFate}
 					currentUser={this.state.currentUser}
 					filterByRegion={this.filterByRegion}
-					filteredPoke={this.state.filteredPoke}
-				/>
+					filteredPoke={this.state.filteredPoke} />
 			</Segment>
 			
 		const opening = 
@@ -304,11 +290,11 @@ class App extends Component {
 				<OpeningPage
 					handleLogin={this.handleLogin}
 					handleSignup={this.handleSignup}
-					handleChange={this.handleChange} 
-					/>
+					handleChange={this.handleChange} />
 			</Segment>
 		
 		let showMe 
+		
 		if (this.state.enterPage === 'o') {
 			showMe = opening 
 		} else if (this.state.enterPage === 'a') {
@@ -321,7 +307,7 @@ class App extends Component {
 			<div>
 				{showMe}
 			</div>
-		);
+		)
 	}
 }
 
